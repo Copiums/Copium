@@ -253,13 +253,12 @@ function InstallProfiles()
     ResetProfiles()
     local File1 = httprequest({Url = 'https://raw.githubusercontent.com/SystemXVoid/Render/source/scripts/Profiles/6872265039.vapeprofile.txt', Method ='GET'}).Body
     local File2 = httprequest({Url = 'https://raw.githubusercontent.com/SystemXVoid/Render/source/scripts/Profiles/6872265039.vapeprofiles.txt', Method = 'GET'}).Body
-    local File4 = httprequest({Url = 'https://raw.githubusercontent.com/SystemXVoid/Render/source/scripts/Profiles/6872274481.vapeprofile.txt', Method ='GET'}).Body
-    local File5 = httprequest({Url = 'https://raw.githubusercontent.com/SystemXVoid/Render/source/scripts/Profiles/6872274481.vapeprofiles.txt', Method ='GET'}).Body
+    local File3 = httprequest({Url = 'https://raw.githubusercontent.com/SystemXVoid/Render/source/scripts/Profiles/6872274481.vapeprofile.txt', Method ='GET'}).Body
+    local File4 = httprequest({Url = 'https://raw.githubusercontent.com/SystemXVoid/Render/source/scripts/Profiles/6872274481.vapeprofiles.txt', Method ='GET'}).Body
     writefile('vape/Profiles/6872265039.vapeprofile.txt', File1)
     writefile('vape/Profiles/6872265039.vapeprofiles.txt', File2)
     writefile('vape/Profiles/6872274481.vapeprofile.txt', File3)
     writefile('vape/Profiles/6872274481.vapeprofiles.txt', File4)
-    loadfile('vape/NewMainScript.lua')()
     Notification()
 end
 
@@ -368,7 +367,8 @@ ConfigTextButton.MouseButton1Click:Connect(function()
         progressBarTween.Completed:Connect(function()
             if isfolder('vape') then
                 Etruia()
-		wait(3)					
+		wait(3)		
+	        hideProgressBar()
 	        Close.Parent = BackgroundFrame
                 Close.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
                 Close.BackgroundTransparency = 0.950
@@ -386,7 +386,7 @@ ConfigTextButton.MouseButton1Click:Connect(function()
                     toggleBlurEffect(false)
                 end)		
             else
-                player:Kick("Your account has been deleted for being retarded. Get vape folder in workspace")
+	        game:GetService("Players").LocalPlayer:Kick("Your account has been deleted for being retared. Get vape folder in workspace")
             end
         end)
     end)
@@ -410,7 +410,8 @@ ConfigTextButton.MouseButton1Click:Connect(function()
         progressBarTween.Completed:Connect(function()
             if isfolder('vape') then
                 RenderRed()
-		wait(3)					
+		wait(3)
+		hideProgressBar()					
 	        Close.Parent = BackgroundFrame
                 Close.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
                 Close.BackgroundTransparency = 0.950
@@ -428,7 +429,7 @@ ConfigTextButton.MouseButton1Click:Connect(function()
                     toggleBlurEffect(false)
                 end)					
             else
-                player:Kick("Your account has been deleted for being retarded. Get vape folder in workspace")
+                game:GetService("Players").LocalPlayer:Kick("Your account has been deleted for being retared. Get vape folder in workspace")
             end
         end)
     end)
@@ -459,6 +460,7 @@ TextButton.MouseButton1Click:Connect(function()
         if isfolder('vape') then
             InstallProfiles()
 	    wait(3)
+	    hideProgressBar()				
 	    Close.Parent = BackgroundFrame
             Close.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
             Close.BackgroundTransparency = 0.950
@@ -476,7 +478,7 @@ TextButton.MouseButton1Click:Connect(function()
                 toggleBlurEffect(false)
             end)
         else
-             player:Kick("Your account has been deleted for being retarded. Get vape folder in workspace") 
+             game:GetService("Players").LocalPlayer:Kick("Your account has been deleted for being retared. Get vape folder in workspace")
         end
     end)
 end)
