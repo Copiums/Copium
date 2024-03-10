@@ -1,5 +1,3 @@
--- Copium Config Installer
-
 local ScreenGui = Instance.new("ScreenGui")
 local BackgroundFrame = Instance.new("Frame")
 local UICorner = Instance.new("UICorner")
@@ -181,7 +179,6 @@ function changeText(txt)
 	text = txt
 end
 
--- am sorry for skidding this 1 part cuz im lazy. THE ONLY PART THAT IS SKIDDED TILL THE NEXT: --
 function Executor() 
 	if not isfile then
 		lplr:Kick("Executor does not support isfile, Fluxus, Delta, Vega X or Evon.")
@@ -230,7 +227,6 @@ function Etruia()
     loadfile('vape/NewMainScript.lua')()
 end
 
--- dont skid pls. the rest is nonskidded
 local hasLoaded = false
 function RenderRed()
     if not hasLoaded then
@@ -327,7 +323,7 @@ ConfigTextButton.MouseButton1Click:Connect(function()
     ConfigTextsButton.TextColor3 = Color3.fromRGB(255, 255, 255)
     ConfigTextsButton.TextSize = 25.000
     ConfigTextsButton.MouseButton1Click:Connect(function()
-        ConfigTextButton:Destroy()
+        ConfigWindow:Destroy()
         showProgressBar()
         local progressBarTween = game:GetService("TweenService"):Create(ProgressBarFill, TweenInfo.new(3), {Size = UDim2.new(1, 0, 1, 0)})
         progressBarTween:Play()
@@ -351,7 +347,7 @@ ConfigTextButton.MouseButton1Click:Connect(function()
     ConfigTextssButton.TextColor3 = Color3.fromRGB(255, 255, 255)
     ConfigTextssButton.TextSize = 25.000
     ConfigTextssButton.MouseButton1Click:Connect(function()
-        ConfigTextButton:Destroy()
+        ConfigWindow:Destroy()
         showProgressBar()
         local progressBarTween = game:GetService("TweenService"):Create(ProgressBarFill, TweenInfo.new(3), {Size = UDim2.new(1, 0, 1, 0)})
         progressBarTween:Play()
