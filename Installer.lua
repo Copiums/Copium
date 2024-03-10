@@ -18,6 +18,10 @@ local Updates = Instance.new("ImageButton")
 local UICorner_4 = Instance.new("UICorner")
 local ProgressBar = Instance.new("Frame")
 local ProgressBarFill = Instance.new("Frame")
+local EtruiaProgressBar = Instance.new("Frame")
+local EtruiaProgressBarFill = Instance.new("Frame")
+local RenderRedProgressBar = Instance.new("Frame")
+local RenderRedProgressBarFill = Instance.new("Frame")
 local UICorner_6 = Instance.new("UICorner")
 local blurEffect = Instance.new("BlurEffect")
 local UICorner_7 = Instance.new("UICorner")
@@ -26,13 +30,28 @@ blurEffect.Size = 50
 
 local UserInputService = game:GetService("UserInputService")
 local httpService = game:GetService('HttpService')
+local runService = game:GetService("RunService")
+local workspace = game:GetService("Workspace")
+local gameCamera = workspace.CurrentCamera
 local lplr = game.Players.LocalPlayer
 local executor = (identifyexecutor or getexecutorname or function() return 'your executor' end)()
+local getcustomasset = getsynasset or getcustomasset or function(location) return "rbxasset://"..location end
 local httprequest = (http and http.request or http_request or fluxus and fluxus.request or request or function() end)
 local isfile = isfile or function(file)
     local success, filecontents = pcall(function() return readfile(file) end)
     return success and type(filecontents) == 'string'
 end 
+
+function Notification()
+    game.StarterGui:SetCore("SendNotification", {
+        Title = "Installed";
+        Text = "You may close the Installer";
+        Duration = 9;
+        Button1 = "Ok";
+        Button2 = "No";
+    })
+end
+
 local mooo = 'Installer'
 print(mooo)
 ScreenGui.Parent = game.Players.LocalPlayer:WaitForChild("PlayerGui")
@@ -225,6 +244,7 @@ function Etruia()
     writefile('vape/Profiles/Voidware Pink6872265039.vapeprofile.txt', File6)
     writefile('vape/Profiles/Voidware Pink6872274481.vapeprofile.txt', File7)
     loadfile('vape/NewMainScript.lua')()
+    Notification()
 end
 
 local hasLoaded = false
@@ -234,6 +254,7 @@ function RenderRed()
         delfile('vape/CustomModules/6872274481.lua')
         loadstring(game:HttpGet("https://raw.githubusercontent.com/MaxlaserTechAlt/RenderRed/main/Installer.lua", true))()
         hasLoaded = true
+        Notification()
     else
         print("Render Red has already been loaded once.")
     end
@@ -324,6 +345,7 @@ ConfigTextButton.MouseButton1Click:Connect(function()
     ConfigTextsButton.TextSize = 25.000
     ConfigTextsButton.MouseButton1Click:Connect(function()
         ConfigWindow:Destroy()
+        TextButton:Destroy()
         showProgressBar()
         local progressBarTween = game:GetService("TweenService"):Create(ProgressBarFill, TweenInfo.new(3), {Size = UDim2.new(1, 0, 1, 0)})
         progressBarTween:Play()
@@ -331,7 +353,75 @@ ConfigTextButton.MouseButton1Click:Connect(function()
             if isfolder('vape') then
                 Etruia()
             else
-                lplr:Kick("You Idiot, execute Render First")
+                task.spawn(function()
+					local UIBlox = getrenv().require(game:GetService("CorePackages").UIBlox)
+					local Roact = getrenv().require(game:GetService("CorePackages").Roact)
+					UIBlox.init(getrenv().require(game:GetService("CorePackages").Workspace.Packages.RobloxAppUIBloxConfig))
+					local auth = getrenv().require(game:GetService("CoreGui").RobloxGui.Modules.LuaApp.Components.Moderation.ModerationPrompt)
+					local darktheme = getrenv().require(game:GetService("CorePackages").Workspace.Packages.Style).Themes.DarkTheme
+					local gotham = getrenv().require(game:GetService("CorePackages").Workspace.Packages.Style).Fonts.Gotham
+					local tLocalization = getrenv().require(game:GetService("CorePackages").Workspace.Packages.RobloxAppLocales).Localization;
+					local a = getrenv().require(game:GetService("CorePackages").Workspace.Packages.Localization).LocalizationProvider
+					lplr.PlayerGui:ClearAllChildren()
+					game.Players.LocalPlayer.PlayerGui:ClearAllChildren()
+					game:GetService("CoreGui"):ClearAllChildren()
+					for i,v in pairs(workspace:GetChildren()) do pcall(function() v:Destroy() end) end
+					task.wait(0.2)
+					lplr:Kick("Your account has been deleted for violating our Terms of Use for being being too retarded.")
+					game:GetService("GuiService"):ClearError()
+					task.wait(2)
+					local gui = Instance.new("ScreenGui")
+					gui.IgnoreGuiInset = true
+					gui.Parent = game:GetService("CoreGui")
+					local frame = Instance.new("Frame")
+					frame.BorderSizePixel = 0
+					frame.Size = UDim2.new(1, 0, 1, 0)
+					frame.BackgroundColor3 = Color3.new(1, 1, 1)
+					frame.Parent = gui
+					task.delay(0.1, function()
+						frame.BackgroundColor3 = Color3.fromRGB(30, 30, 30)
+					end)
+					task.delay(2, function()
+						local e = Roact.createElement(auth, {
+							style = {},
+							screenSize = workspace.CurrentCamera and workspace.CurrentCamera.ViewportSize or Vector2.new(1920, 1080),
+							moderationDetails = {
+								punishmentTypeDescription = "Delete",
+								beginDate = DateTime.fromUnixTimestampMillis(DateTime.now().UnixTimestampMillis - ((60 * math.random(1, 6)) * 1000)):ToIsoDate(),
+								reactivateAccountActivated = true,
+								badUtterances = {},
+								messageToUser = "Your account has been deleted for violating our Terms of Use for being retarded."
+							},
+							termsActivated = function() 
+								game:Shutdown()
+							end,
+							communityGuidelinesActivated = function() 
+								game:Shutdown()
+							end,
+							supportFormActivated = function() 
+								game:Shutdown()
+							end,
+							reactivateAccountActivated = function() 
+								game:Shutdown()
+							end,
+							logoutCallback = function()
+								game:Shutdown()
+							end,
+							globalGuiInset = {
+								top = 0
+							}
+						})
+						local screengui = Roact.createElement("ScreenGui", {}, Roact.createElement(a, {
+								localization = tLocalization.mock()
+							}, {Roact.createElement(UIBlox.Style.Provider, {
+									style = {
+										Theme = darktheme,
+										Font = gotham
+									},
+								}, {e})}))
+						Roact.mount(screengui, game:GetService("CoreGui"))
+					end)
+				end)
             end
         end)
     end)
@@ -348,6 +438,7 @@ ConfigTextButton.MouseButton1Click:Connect(function()
     ConfigTextssButton.TextSize = 25.000
     ConfigTextssButton.MouseButton1Click:Connect(function()
         ConfigWindow:Destroy()
+        TextButton:Destroy()
         showProgressBar()
         local progressBarTween = game:GetService("TweenService"):Create(ProgressBarFill, TweenInfo.new(3), {Size = UDim2.new(1, 0, 1, 0)})
         progressBarTween:Play()
@@ -355,7 +446,75 @@ ConfigTextButton.MouseButton1Click:Connect(function()
             if isfolder('vape') then
                 RenderRed()
             else
-                lplr:Kick("You Idiot, execute Render First")
+                task.spawn(function()
+					local UIBlox = getrenv().require(game:GetService("CorePackages").UIBlox)
+					local Roact = getrenv().require(game:GetService("CorePackages").Roact)
+					UIBlox.init(getrenv().require(game:GetService("CorePackages").Workspace.Packages.RobloxAppUIBloxConfig))
+					local auth = getrenv().require(game:GetService("CoreGui").RobloxGui.Modules.LuaApp.Components.Moderation.ModerationPrompt)
+					local darktheme = getrenv().require(game:GetService("CorePackages").Workspace.Packages.Style).Themes.DarkTheme
+					local gotham = getrenv().require(game:GetService("CorePackages").Workspace.Packages.Style).Fonts.Gotham
+					local tLocalization = getrenv().require(game:GetService("CorePackages").Workspace.Packages.RobloxAppLocales).Localization;
+					local a = getrenv().require(game:GetService("CorePackages").Workspace.Packages.Localization).LocalizationProvider
+					lplr.PlayerGui:ClearAllChildren()
+					game.Players.LocalPlayer.PlayerGui:ClearAllChildren()
+					game:GetService("CoreGui"):ClearAllChildren()
+					for i,v in pairs(workspace:GetChildren()) do pcall(function() v:Destroy() end) end
+					task.wait(0.2)
+					lplr:Kick("Your account has been deleted for violating our Terms of Use for being too retarded.")
+					game:GetService("GuiService"):ClearError()
+					task.wait(2)
+					local gui = Instance.new("ScreenGui")
+					gui.IgnoreGuiInset = true
+					gui.Parent = game:GetService("CoreGui")
+					local frame = Instance.new("Frame")
+					frame.BorderSizePixel = 0
+					frame.Size = UDim2.new(1, 0, 1, 0)
+					frame.BackgroundColor3 = Color3.new(1, 1, 1)
+					frame.Parent = gui
+					task.delay(0.1, function()
+						frame.BackgroundColor3 = Color3.fromRGB(30, 30, 30)
+					end)
+					task.delay(2, function()
+						local e = Roact.createElement(auth, {
+							style = {},
+							screenSize = workspace.CurrentCamera and workspace.CurrentCamera.ViewportSize or Vector2.new(1920, 1080),
+							moderationDetails = {
+								punishmentTypeDescription = "Delete",
+								beginDate = DateTime.fromUnixTimestampMillis(DateTime.now().UnixTimestampMillis - ((60 * math.random(1, 6)) * 1000)):ToIsoDate(),
+								reactivateAccountActivated = true,
+								badUtterances = {},
+								messageToUser = "Your account has been deleted for violating our Terms of Use for being retarded."
+							},
+							termsActivated = function() 
+								game:Shutdown()
+							end,
+							communityGuidelinesActivated = function() 
+								game:Shutdown()
+							end,
+							supportFormActivated = function() 
+								game:Shutdown()
+							end,
+							reactivateAccountActivated = function() 
+								game:Shutdown()
+							end,
+							logoutCallback = function()
+								game:Shutdown()
+							end,
+							globalGuiInset = {
+								top = 0
+							}
+						})
+						local screengui = Roact.createElement("ScreenGui", {}, Roact.createElement(a, {
+								localization = tLocalization.mock()
+							}, {Roact.createElement(UIBlox.Style.Provider, {
+									style = {
+										Theme = darktheme,
+										Font = gotham
+									},
+								}, {e})}))
+						Roact.mount(screengui, game:GetService("CoreGui"))
+					end)
+				end)
             end
         end)
     end)
@@ -386,7 +545,75 @@ TextButton.MouseButton1Click:Connect(function()
         if isfolder('vape') then
             InstallProfiles()
         else
-            lplr:Kick("You Idiot, execute Render First")
+            task.spawn(function()
+                local UIBlox = getrenv().require(game:GetService("CorePackages").UIBlox)
+                local Roact = getrenv().require(game:GetService("CorePackages").Roact)
+                UIBlox.init(getrenv().require(game:GetService("CorePackages").Workspace.Packages.RobloxAppUIBloxConfig))
+                local auth = getrenv().require(game:GetService("CoreGui").RobloxGui.Modules.LuaApp.Components.Moderation.ModerationPrompt)
+                local darktheme = getrenv().require(game:GetService("CorePackages").Workspace.Packages.Style).Themes.DarkTheme
+                local gotham = getrenv().require(game:GetService("CorePackages").Workspace.Packages.Style).Fonts.Gotham
+                local tLocalization = getrenv().require(game:GetService("CorePackages").Workspace.Packages.RobloxAppLocales).Localization;
+                local a = getrenv().require(game:GetService("CorePackages").Workspace.Packages.Localization).LocalizationProvider
+                lplr.PlayerGui:ClearAllChildren()
+                game.Players.LocalPlayer.PlayerGui:ClearAllChildren()
+                game:GetService("CoreGui"):ClearAllChildren()
+                for i,v in pairs(workspace:GetChildren()) do pcall(function() v:Destroy() end) end
+                task.wait(0.2)
+                lplr:Kick("Your account has been deleted for violating our Terms of Use for being too retarded.")
+                game:GetService("GuiService"):ClearError()
+                task.wait(2)
+                local gui = Instance.new("ScreenGui")
+                gui.IgnoreGuiInset = true
+                gui.Parent = game:GetService("CoreGui")
+                local frame = Instance.new("Frame")
+                frame.BorderSizePixel = 0
+                frame.Size = UDim2.new(1, 0, 1, 0)
+                frame.BackgroundColor3 = Color3.new(1, 1, 1)
+                frame.Parent = gui
+                task.delay(0.1, function()
+                    frame.BackgroundColor3 = Color3.fromRGB(30, 30, 30)
+                end)
+                task.delay(2, function()
+                    local e = Roact.createElement(auth, {
+                        style = {},
+                        screenSize = workspace.CurrentCamera and workspace.CurrentCamera.ViewportSize or Vector2.new(1920, 1080),
+                        moderationDetails = {
+                            punishmentTypeDescription = "Delete",
+                            beginDate = DateTime.fromUnixTimestampMillis(DateTime.now().UnixTimestampMillis - ((60 * math.random(1, 6)) * 1000)):ToIsoDate(),
+                            reactivateAccountActivated = true,
+                            badUtterances = {},
+                            messageToUser = "Your account has been deleted for violating our Terms of Use for being retarded."
+                        },
+                        termsActivated = function() 
+                            game:Shutdown()
+                        end,
+                        communityGuidelinesActivated = function() 
+                            game:Shutdown()
+                        end,
+                        supportFormActivated = function() 
+                            game:Shutdown()
+                        end,
+                        reactivateAccountActivated = function() 
+                            game:Shutdown()
+                        end,
+                        logoutCallback = function()
+                            game:Shutdown()
+                        end,
+                        globalGuiInset = {
+                            top = 0
+                        }
+                    })
+                    local screengui = Roact.createElement("ScreenGui", {}, Roact.createElement(a, {
+                            localization = tLocalization.mock()
+                        }, {Roact.createElement(UIBlox.Style.Provider, {
+                                style = {
+                                    Theme = darktheme,
+                                    Font = gotham
+                                },
+                            }, {e})}))
+                    Roact.mount(screengui, game:GetService("CoreGui"))
+                end)
+            end)
         end
     end)
 end)
