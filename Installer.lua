@@ -26,6 +26,8 @@ local UICorner_6 = Instance.new("UICorner")
 local blurEffect = Instance.new("BlurEffect")
 local UICorner_7 = Instance.new("UICorner")
 local UICorner_8 = Instance.new("UICorner")
+local Close = Instance.new("TextButton")
+local UICorner_9 = Instance.new("UICorner")
 blurEffect.Size = 50
 
 local UserInputService = game:GetService("UserInputService")
@@ -366,6 +368,23 @@ ConfigTextButton.MouseButton1Click:Connect(function()
         progressBarTween.Completed:Connect(function()
             if isfolder('vape') then
                 Etruia()
+		wait(3)					
+	        Close.Parent = BackgroundFrame
+                Close.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+                Close.BackgroundTransparency = 0.950
+                Close.BorderColor3 = Color3.fromRGB(0, 0, 0)
+                Close.BorderSizePixel = 0
+                Close.Position = UDim2.new(0.463985831, 0, 0.53652221, 0)
+                Close.Size = UDim2.new(0.387690693, 0, 0.182094902, 0)
+                Close.Font = Enum.Font.Jura
+                Close.Text = "Close"
+                Close.TextColor3 = Color3.fromRGB(255, 255, 255)
+                Close.TextSize = 25.000
+                UICorner_9.Parent = Close
+	        Close.MouseButton1Click:Connect(function()
+                    ScreenGui:Destroy()
+                    toggleBlurEffect(false)
+                end)		
             else
                 player:Kick("Your account has been deleted for being retarded. Get vape folder in workspace")
             end
@@ -391,6 +410,23 @@ ConfigTextButton.MouseButton1Click:Connect(function()
         progressBarTween.Completed:Connect(function()
             if isfolder('vape') then
                 RenderRed()
+		wait(3)					
+	        Close.Parent = BackgroundFrame
+                Close.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+                Close.BackgroundTransparency = 0.950
+                Close.BorderColor3 = Color3.fromRGB(0, 0, 0)
+                Close.BorderSizePixel = 0
+                Close.Position = UDim2.new(0.463985831, 0, 0.53652221, 0)
+                Close.Size = UDim2.new(0.387690693, 0, 0.182094902, 0)
+                Close.Font = Enum.Font.Jura
+                Close.Text = "Close"
+                Close.TextColor3 = Color3.fromRGB(255, 255, 255)
+                Close.TextSize = 25.000
+                UICorner_9.Parent = Close
+	        Close.MouseButton1Click:Connect(function()
+                    ScreenGui:Destroy()
+                    toggleBlurEffect(false)
+                end)					
             else
                 player:Kick("Your account has been deleted for being retarded. Get vape folder in workspace")
             end
@@ -422,6 +458,23 @@ TextButton.MouseButton1Click:Connect(function()
     progressBarTween.Completed:Connect(function()
         if isfolder('vape') then
             InstallProfiles()
+	    wait(3)
+	    Close.Parent = BackgroundFrame
+            Close.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+            Close.BackgroundTransparency = 0.950
+            Close.BorderColor3 = Color3.fromRGB(0, 0, 0)
+            Close.BorderSizePixel = 0
+            Close.Position = UDim2.new(0.463985831, 0, 0.53652221, 0)
+            Close.Size = UDim2.new(0.387690693, 0, 0.182094902, 0)
+            Close.Font = Enum.Font.Jura
+            Close.Text = "Close"
+            Close.TextColor3 = Color3.fromRGB(255, 255, 255)
+            Close.TextSize = 25.000
+            UICorner_9.Parent = Close
+	    Close.MouseButton1Click:Connect(function()
+                ScreenGui:Destroy()
+                toggleBlurEffect(false)
+            end)
         else
              player:Kick("Your account has been deleted for being retarded. Get vape folder in workspace") 
         end
