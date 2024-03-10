@@ -417,7 +417,7 @@ end)
 TextButton.MouseButton1Click:Connect(function()
     TextButton:Destroy()
     showProgressBar()
-    local progressBarTween = game:GetService("TweenService"):Create(ProgressBarFill, TweenInfo.new(3), {Size = UDim2.new(12, 0, 1, 0)})
+    local progressBarTween = game:GetService("TweenService"):Create(ProgressBarFill, TweenInfo.new(3), {Size = UDim2.new(1, 0, 1, 0)})
     progressBarTween:Play()
     progressBarTween.Completed:Connect(function()
         if isfolder('vape') then
