@@ -156,7 +156,7 @@ UICorner_4.Parent = Updates
 ProgressBar.BackgroundTransparency = 0.990
 ProgressBar.BorderSizePixel = 0
 ProgressBar.Position = UDim2.new(TextBox.Position.X.Scale - 15, TextBox.Position.X.Offset, TextBox.Position.Y.Scale + 0.25, TextBox.Position.Y.Offset)
-ProgressBar.Size = UDim2.new(0.27, 0, 0.02, 0) -- Adjusted size
+ProgressBar.Size = UDim2.new(0.2, 0, 0.02, 0) -- Adjusted size
 
 ProgressBarFill.Name = "ProgressBarFill"
 ProgressBarFill.Parent = ProgressBar
