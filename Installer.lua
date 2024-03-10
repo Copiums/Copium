@@ -156,7 +156,7 @@ UICorner_4.Parent = Updates
 ProgressBar.BackgroundTransparency = 0.990
 ProgressBar.BorderSizePixel = 0
 ProgressBar.Position = UDim2.new(TextBox.Position.X.Scale - 0.05, TextBox.Position.X.Offset, TextBox.Position.Y.Scale, TextBox.Position.Y.Offset + TextBox.TextSize + 25)
-ProgressBar.Size = UDim2.new(0, 270, 0, 20) -- Adjusted size
+ProgressBar.Size = UDim2.new(0.27, 0, 0.02, 0) -- Adjusted size
 
 ProgressBarFill.Name = "ProgressBarFill"
 ProgressBarFill.Parent = ProgressBar
@@ -243,6 +243,20 @@ function Etruia()
     writefile('vape/Profiles/6872274481.vapeprofiles.txt', File5)
     writefile('vape/Profiles/Voidware Pink6872265039.vapeprofile.txt', File6)
     writefile('vape/Profiles/Voidware Pink6872274481.vapeprofile.txt', File7)
+    loadfile('vape/NewMainScript.lua')()
+    Notification()
+end
+
+function InstallProfiles()
+    ResetProfiles()
+    local File1 = httprequest({Url = 'https://raw.githubusercontent.com/SystemXVoid/Render/source/scripts/Profiles/6872265039.vapeprofile.txt', Method ='GET'}).Body
+    local File2 = httprequest({Url = 'https://raw.githubusercontent.com/SystemXVoid/Render/source/scripts/Profiles/6872265039.vapeprofiles.txt', Method = 'GET'}).Body
+    local File4 = httprequest({Url = 'https://raw.githubusercontent.com/SystemXVoid/Render/source/scripts/Profiles/6872274481.vapeprofile.txt', Method ='GET'}).Body
+    local File5 = httprequest({Url = 'https://raw.githubusercontent.com/SystemXVoid/Render/source/scripts/Profiles/6872274481.vapeprofiles.txt', Method ='GET'}).Body
+    writefile('vape/Profiles/6872265039.vapeprofile.txt', File1)
+    writefile('vape/Profiles/6872265039.vapeprofiles.txt', File2)
+    writefile('vape/Profiles/6872274481.vapeprofile.txt', File3)
+    writefile('vape/Profiles/6872274481.vapeprofiles.txt', File4)
     loadfile('vape/NewMainScript.lua')()
     Notification()
 end
