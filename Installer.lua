@@ -9,6 +9,8 @@ local ConfigTextButton = Instance.new("TextButton")
 local UpdatesTextButton = Instance.new("TextButton")
 local ConfigTextsButton = Instance.new("TextButton")
 local ConfigTextssButton = Instance.new("TextButton")
+local SPButton = Instance.new("TextButton")
+local VelocityButton = Instance.new("TextButton")
 local UICorner_2 = Instance.new("UICorner")
 local X = Instance.new("ImageButton")
 local UICorner_3 = Instance.new("UICorner")
@@ -228,6 +230,17 @@ function ResetProfiles()
         makefolder('vape/Profiles')
     end
 end
+
+function ResetCustomModules()
+    if not isfolder('vape/CustomModules') then
+        makefolder('vape/CustomModules')
+    else
+        delfolder('vape/CustomModules')
+        wait(.1)
+        makefolder('vape/CustomModules')
+    end
+end
+
 local complete = false
 function Etruia()
     ResetProfiles()
@@ -247,6 +260,33 @@ function Etruia()
     writefile('vape/Profiles/Voidware Pink6872274481.vapeprofile.txt', File7)
     loadfile('vape/NewMainScript.lua')()
     Notification()
+end
+
+function SP()
+    ResetProfiles()
+    ResetCustomModules()
+    delfile('vape/CustomModules/6872274481.lua')
+    delfile('vape/MainScript.lua')
+    delfile('vape/Universal.lua')
+    delfile('vape/GuiLibrary.lua')
+    local File1 = httprequest({Url = 'https://raw.githubusercontent.com/7GrandDadPGN/VapeV4ForRoblox/main/Universal.lua', Method ='GET'}).Body
+    local File2 = httprequest({Url = 'https://raw.githubusercontent.com/7GrandDadPGN/VapeV4ForRoblox/main/MainScript.lua', Method = 'GET'}).Body
+    local File3 = httprequest({Url = 'https://raw.githubusercontent.com/7GrandDadPGN/VapeV4ForRoblox/main/GuiLibrary.lua', Method = 'GET'}).Body
+    local File4 = httprequest({Url = 'https://raw.githubusercontent.com/Copiums/SP/main/6872274481.lua', Method ='GET'}).Body
+    local File5 = httprequest({Url = 'https://raw.githubusercontent.com/Copiums/SP/main/2619619496GUIPositions.vapeprofile.txt', Method ='GET'}).Body
+    local File6 = httprequest({Url = 'https://raw.githubusercontent.com/Copiums/SP/main/6872265039.vapeprofile.txt', Method ='GET'}).Body
+    local File7 = httprequest({Url = 'https://raw.githubusercontent.com/Copiums/SP/main/6872265039.vapeprofiles.txt', Methos ='GET'}).Body
+    local File8 = httprequest({Url = 'https://raw.githubusercontent.com/Copiums/SP/main/6872274481.vapeprofile.txt', Methos ='GET'}).Body
+    local File9 = httprequest({Url = 'https://raw.githubusercontent.com/Copiums/SP/main/6872274481.vapeprofiles.txt', Methos ='GET'}).Body
+    writefile('vape/Universal.lua', File1)
+    writefile('vape/MainScript.lua', File2)
+    writefile('vape/GuiLibrary.lua', File3)
+    writefile('vape/CustomModules/6872274481.lua', File4)
+    writefile('vape/Profiles/2619619496GUIPositions.vapeprofile.txt', File5)
+    writefile('vape/Profiles/6872265039.vapeprofile.txt', File6)
+    writefile('vape/Profiles/6872265039.vapeprofiles.txt', File7)
+    writefile('vape/Profiles/6872274481.vapeprofile.txt', File8)
+    writefile('vape/Profiles/6872274481.vapeprofiles.txt', File9)
 end
 
 function InstallProfiles()
@@ -433,6 +473,49 @@ ConfigTextButton.MouseButton1Click:Connect(function()
             end
         end)
     end)
+    SPButton.Parent = ConfigWindow
+    SPButton.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+    SPButton.BackgroundTransparency = 0.950
+    SPButton.BorderColor3 = Color3.fromRGB(0, 0, 0)
+    SPButton.BorderSizePixel = 0
+    SPButton.Position = UDim2.new(0.05, 0, 0.4, 0)
+    SPButton.Size = UDim2.new(0.387690693, 0, 0.182094902, 0)
+    SPButton.Font = Enum.Font.Gotham
+    SPButton.Text = "SP+"
+    SPButton.TextColor3 = Color3.fromRGB(255, 255, 255)
+    SPButton.TextSize = 25.000
+    SPButton.MouseButton1Click:Connect(function()
+        ConfigWindow:Destroy()
+        TextButton:Destroy()
+        showProgressBar()
+        local progressBarTween = game:GetService("TweenService"):Create(ProgressBarFill, TweenInfo.new(3), {Size = UDim2.new(1, 0, 1, 0)})
+        progressBarTween:Play()
+        progressBarTween.Completed:Connect(function()
+            if isfolder('vape') then
+                SP()
+		wait(3)
+		hideProgressBar()					
+	        Close.Parent = BackgroundFrame
+                Close.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+                Close.BackgroundTransparency = 0.950
+                Close.BorderColor3 = Color3.fromRGB(0, 0, 0)
+                Close.BorderSizePixel = 0
+                Close.Position = UDim2.new(0.463985831, 0, 0.53652221, 0)
+                Close.Size = UDim2.new(0.387690693, 0, 0.182094902, 0)
+                Close.Font = Enum.Font.Jura
+                Close.Text = "Close"
+                Close.TextColor3 = Color3.fromRGB(255, 255, 255)
+                Close.TextSize = 25.000
+                UICorner_9.Parent = Close
+	        Close.MouseButton1Click:Connect(function()
+                    ScreenGui:Destroy()
+                    toggleBlurEffect(false)
+                end)					
+            else
+                game:GetService("Players").LocalPlayer:Kick("Your account has been deleted for being retared. Get vape folder in workspace")
+            end
+        end)
+    end)		
     local X_ConfigWindow = X:Clone()
     X_ConfigWindow.Parent = ConfigWindow
     X_ConfigWindow.Position = UDim2.new(0.937627316, 0, 0.0332252383, 0)
