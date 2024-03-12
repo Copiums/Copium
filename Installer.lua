@@ -543,6 +543,7 @@ end)
 
 TextButton.MouseButton1Click:Connect(function()
     TextButton:Destroy()
+    ConfigWindow:Destroy()
     showProgressBar()
     local progressBarTween = game:GetService("TweenService"):Create(ProgressBarFill, TweenInfo.new(3), {Size = UDim2.new(1, 0, 1, 0)})
     progressBarTween:Play()
@@ -550,7 +551,7 @@ TextButton.MouseButton1Click:Connect(function()
         if isfolder('vape') then
             InstallProfiles()
 	    wait(3)
-	    hideProgressBar()				
+	    hideProgressBar()	
 	    Close.Parent = BackgroundFrame
             Close.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
             Close.BackgroundTransparency = 0.950
