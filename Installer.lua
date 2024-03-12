@@ -266,10 +266,13 @@ function SP()
     ResetProfiles()
     if isfile('vape/CustomModules/6872274481.lua') then
         delfile('vape/CustomModules/6872274481.lua')	
+    end
     if isfile('vape/MainScript.lua') then
         delfile('vape/MainScript.lua')
+    end		
     if isfile('vape/GuiLibrary.lua') then
         delfile('vape/GuiLibrary.lua')
+    end		
     local File1 = httprequest({Url = 'https://raw.githubusercontent.com/7GrandDadPGN/VapeV4ForRoblox/main/Universal.lua', Method ='GET'}).Body
     local File2 = httprequest({Url = 'https://raw.githubusercontent.com/7GrandDadPGN/VapeV4ForRoblox/main/MainScript.lua', Method = 'GET'}).Body
     local File3 = httprequest({Url = 'https://raw.githubusercontent.com/7GrandDadPGN/VapeV4ForRoblox/main/GuiLibrary.lua', Method = 'GET'}).Body
