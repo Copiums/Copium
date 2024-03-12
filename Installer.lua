@@ -543,7 +543,6 @@ end)
 
 TextButton.MouseButton1Click:Connect(function()
     TextButton:Destroy()
-    ConfigWindow:Destroy()
     showProgressBar()
     local progressBarTween = game:GetService("TweenService"):Create(ProgressBarFill, TweenInfo.new(3), {Size = UDim2.new(1, 0, 1, 0)})
     progressBarTween:Play()
