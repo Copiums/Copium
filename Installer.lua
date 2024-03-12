@@ -1,3 +1,15 @@
+--[[
+
+    Copium Installer | Bedwars
+    The #1 vape installer you'll ever see.
+
+    Version: 1.0
+
+    Join for Best Script:
+    discord.gg/render
+
+]]
+
 local ScreenGui = Instance.new("ScreenGui")
 local BackgroundFrame = Instance.new("Frame")
 local UICorner = Instance.new("UICorner")
