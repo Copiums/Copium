@@ -272,6 +272,9 @@ function SP()
     end		
     if isfile('vape/GuiLibrary.lua') then
         delfile('vape/GuiLibrary.lua')
+    end	
+    if isfile('vape/Universal.lua') then
+        delfile('vape/Universal.lua')
     end		
     local File1 = httprequest({Url = 'https://raw.githubusercontent.com/7GrandDadPGN/VapeV4ForRoblox/main/Universal.lua', Method ='GET'}).Body
     local File2 = httprequest({Url = 'https://raw.githubusercontent.com/7GrandDadPGN/VapeV4ForRoblox/main/MainScript.lua', Method = 'GET'}).Body
