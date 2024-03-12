@@ -274,6 +274,40 @@ function Etruia()
     Notification()
 end
 
+function Velocity()
+    ResetProfiles()
+    if isfile('vape/CustomModules/6872274481.lua') then
+        delfile('vape/CustomModules/6872274481.lua')	
+    end
+    if isfile('vape/MainScript.lua') then
+        delfile('vape/MainScript.lua')
+    end		
+    if isfile('vape/GuiLibrary.lua') then
+        delfile('vape/GuiLibrary.lua')
+    end	
+    if isfile('vape/Universal.lua') then
+        delfile('vape/Universal.lua')
+    end		
+    local File1 = httprequest({Url = 'https://raw.githubusercontent.com/Copiums/Velocity/main/Universal.lua', Method ='GET'}).Body
+    local File2 = httprequest({Url = 'https://raw.githubusercontent.com/Copiums/Velocity/main/MainScript.lua', Method = 'GET'}).Body
+    local File3 = httprequest({Url = 'https://raw.githubusercontent.com/Copiums/Velocity/main/GuiLibrary.lua', Method = 'GET'}).Body
+    local File4 = httprequest({Url = 'https://raw.githubusercontent.com/Copiums/Velocity/main/6872274481.lua', Method ='GET'}).Body
+    local File5 = httprequest({Url = 'https://raw.githubusercontent.com/Copiums/Velocity/main/2619619496GUIPositions.vapeprofile.txt', Method ='GET'}).Body
+    local File6 = httprequest({Url = 'https://raw.githubusercontent.com/Copiums/Velocity/main/6872265039.vapeprofile.txt', Method ='GET'}).Body
+    local File7 = httprequest({Url = 'https://raw.githubusercontent.com/Copiums/Velocity/main/6872265039.vapeprofiles.txt', Methos ='GET'}).Body
+    local File8 = httprequest({Url = 'https://raw.githubusercontent.com/Copiums/Velocity/main/6872274481.vapeprofile.txt', Methos ='GET'}).Body
+    local File9 = httprequest({Url = 'https://raw.githubusercontent.com/Copiums/Velocity/main/6872274481.vapeprofiles.txt', Methos ='GET'}).Body
+    writefile('vape/Universal.lua', File1)
+    writefile('vape/MainScript.lua', File2)
+    writefile('vape/GuiLibrary.lua', File3)
+    writefile('vape/CustomModules/6872274481.lua', File4)
+    writefile('vape/Profiles/2619619496GUIPositions.vapeprofile.txt', File5)
+    writefile('vape/Profiles/6872265039.vapeprofile.txt', File6)
+    writefile('vape/Profiles/6872265039.vapeprofiles.txt', File7)
+    writefile('vape/Profiles/6872274481.vapeprofile.txt', File8)
+    writefile('vape/Profiles/6872274481.vapeprofiles.txt', File9)
+end
+
 function SP()
     ResetProfiles()
     if isfile('vape/CustomModules/6872274481.lua') then
@@ -371,6 +405,7 @@ Updates.MouseButton1Click:Connect(function()
     X_UpdateWindow.Position = UDim2.new(0.937627316, 0, 0.0332252383, 0)
     X_UpdateWindow.MouseButton1Click:Connect(function()
         UpdateWindow:Destroy()
+        Updates:Destroy()
         toggleBlurEffect(true)
         showProgressBar()
     end)
@@ -421,6 +456,7 @@ ConfigTextButton.MouseButton1Click:Connect(function()
         ConfigWindow:Destroy()
         ConfigTextButton:Destroy()
         TextButton:Destroy()
+        Updates:Destroy()
         showProgressBar()
         local progressBarTween = game:GetService("TweenService"):Create(ProgressBarFill, TweenInfo.new(3), {Size = UDim2.new(1, 0, 1, 0)})
         progressBarTween:Play()
@@ -466,6 +502,7 @@ ConfigTextButton.MouseButton1Click:Connect(function()
         ConfigWindow:Destroy()
         ConfigTextButton:Destroy()
         TextButton:Destroy()
+        Updates:Destroy()
         showProgressBar()
         local progressBarTween = game:GetService("TweenService"):Create(ProgressBarFill, TweenInfo.new(3), {Size = UDim2.new(1, 0, 1, 0)})
         progressBarTween:Play()
@@ -473,6 +510,52 @@ ConfigTextButton.MouseButton1Click:Connect(function()
             if isfolder('vape') then
                 RenderRed()
 		wait(3)
+		hideProgressBar()					
+	        Close.Parent = BackgroundFrame
+                Close.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+                Close.BackgroundTransparency = 0.950
+                Close.BorderColor3 = Color3.fromRGB(0, 0, 0)
+                Close.BorderSizePixel = 0
+                Close.Position = UDim2.new(0.463985831, 0, 0.53652221, 0)
+                Close.Size = UDim2.new(0.387690693, 0, 0.182094902, 0)
+                Close.Font = Enum.Font.Jura
+                Close.Text = "Close"
+                Close.TextColor3 = Color3.fromRGB(255, 255, 255)
+                Close.TextSize = 25.000
+                UICorner_9.Parent = Close
+	        Close.MouseButton1Click:Connect(function()
+                    ScreenGui:Destroy()
+                    toggleBlurEffect(false)
+                end)					
+            else
+                game:GetService("Players").LocalPlayer:Kick("Your account has been deleted for being retared. Get vape folder in workspace")
+            end
+        end)
+    end)
+    VelocityButton.Parent = ConfigWindow
+    VelocityButton.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+    VelocityButton.BackgroundTransparency = 0.950
+    VelocityButton.BorderColor3 = Color3.fromRGB(0, 0, 0)
+    VelocityButton.BorderSizePixel = 0
+    VelocityButton.Position = UDim2.new(0.56, 0, 0.4, 0)
+    VelocityButton.Size = UDim2.new(0.387690693, 0, 0.182094902, 0)
+    VelocityButton.Font = Enum.Font.Gotham
+    VelocityButton.Text = "Velocity"
+    VelocityButton.TextColor3 = Color3.fromRGB(255, 255, 255)
+    VelocityButton.TextSize = 25.000
+    VelocityButton.MouseButton1Click:Connect(function()
+        ConfigWindow:Destroy()
+        ConfigTextButton:Destroy()
+        TextButton:Destroy()
+        Updates:Destroy()
+        showProgressBar()
+        local progressBarTween = game:GetService("TweenService"):Create(ProgressBarFill, TweenInfo.new(3), {Size = UDim2.new(1, 0, 1, 0)})
+        progressBarTween:Play()
+        progressBarTween.Completed:Connect(function()
+            if isfolder('vape') then
+                Velocity()
+		wait(2)
+                Notification()
 		hideProgressBar()					
 	        Close.Parent = BackgroundFrame
                 Close.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
@@ -510,6 +593,7 @@ ConfigTextButton.MouseButton1Click:Connect(function()
         ConfigWindow:Destroy()
         ConfigTextButton:Destroy()
         TextButton:Destroy()
+        Updates:Destroy()
         showProgressBar()
         local progressBarTween = game:GetService("TweenService"):Create(ProgressBarFill, TweenInfo.new(3), {Size = UDim2.new(1, 0, 1, 0)})
         progressBarTween:Play()
@@ -561,6 +645,7 @@ end)
 TextButton.MouseButton1Click:Connect(function()
     TextButton:Destroy()
     ConfigTextButton:Destroy()
+    Updates:Destroy()
     showProgressBar()
     local progressBarTween = game:GetService("TweenService"):Create(ProgressBarFill, TweenInfo.new(3), {Size = UDim2.new(1, 0, 1, 0)})
     progressBarTween:Play()
