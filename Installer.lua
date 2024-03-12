@@ -428,6 +428,7 @@ ConfigTextButton.MouseButton1Click:Connect(function()
             if isfolder('vape') then
                 Etruia()
 		wait(3)		
+                Notification()
 	        hideProgressBar()
 	        Close.Parent = BackgroundFrame
                 Close.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
@@ -515,7 +516,8 @@ ConfigTextButton.MouseButton1Click:Connect(function()
         progressBarTween.Completed:Connect(function()
             if isfolder('vape') then
                 SP()
-		wait(3)
+		wait(2)
+                Notification()
 		hideProgressBar()					
 	        Close.Parent = BackgroundFrame
                 Close.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
@@ -566,6 +568,7 @@ TextButton.MouseButton1Click:Connect(function()
         if isfolder('vape') then
             InstallProfiles()
 	    wait(3)
+            Notification()
 	    hideProgressBar()	
 	    Close.Parent = BackgroundFrame
             Close.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
