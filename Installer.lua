@@ -291,7 +291,7 @@ function Velocity()
     end		
     local File1 = httprequest({Url = 'https://raw.githubusercontent.com/Copiums/Velocity/main/Universal.lua', Method ='GET'}).Body
     local File2 = httprequest({Url = 'https://raw.githubusercontent.com/Copiums/Velocity/main/MainScript.lua', Method = 'GET'}).Body
-    local File3 = httprequest({Url = 'https://raw.githubusercontent.com/7GrandDadPGN/VapeV4ForRoblox/main/GuiLibrary.lua', Method = 'GET'}).Body
+    local File3 = httprequest({Url = 'https://raw.githubusercontent.com/Copiums/Velocity/main/GuiLibrary.lua', Method = 'GET'}).Body
     local File4 = httprequest({Url = 'https://raw.githubusercontent.com/Copiums/Velocity/main/6872274481.lua', Method ='GET'}).Body
     local File5 = httprequest({Url = 'https://raw.githubusercontent.com/Copiums/Velocity/main/2619619496GUIPositions.vapeprofile.txt', Method ='GET'}).Body
     local File6 = httprequest({Url = 'https://raw.githubusercontent.com/Copiums/Velocity/main/6872265039.vapeprofile.txt', Method ='GET'}).Body
