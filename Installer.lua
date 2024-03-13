@@ -274,6 +274,7 @@ function Etruia()
     Notification()
 end
 
+local customassetcheck = true
 function Velocity()
     ResetProfiles()
     if isfile('vape/CustomModules/6872274481.lua') then
