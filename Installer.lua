@@ -287,6 +287,38 @@ function Velocity()
     end	
     if isfile('vape/Universal.lua') then
         delfile('vape/Universal.lua')
+    end
+    if isfolder('vape/assets') then
+        delfolder('vape/assets')
+        wait(.1)
+        makefolder('vape/assets')
+        local function getGitHubFolderContents(username, repo, path)
+            local url = string.format("https://api.github.com/repos/%s/%s/contents/%s", username, repo, path)
+            local response = httpService:GetAsync(url)
+            local contents = httpService:JSONDecode(response)
+            return contents
+        end
+        local function updateFolderFromGitHub(username, repo, folderPath, vapeFolder)
+            local githubContents = getGitHubFolderContents(username, repo, folderPath)
+            for i, item in ipairs(githubContents) do
+                if item.type == "file" then
+                    local fileUrl = item.download_url
+                    local fileContents = httpService:GetAsync(fileUrl)
+                    writefile(vapeFolder .. "/" .. item.name, fileContents)
+		    if string.find(item.name, "%.png$") then
+                        ContentProvider:PreloadAsync({vapeFolder .. "/" .. item.name})
+                    end
+                    writefile(vapeFolder .. "/" .. item.name, fileContents)
+                elseif item.type == "dir" then
+                    updateFolderFromGitHub(username, repo, folderPath .. "/" .. item.name, vapeFolder .. "/" .. item.name)
+                end
+            end
+        end
+        local githubUsername = "Copiums"
+        local githubRepo = "Velocity"
+        local githubFolderPath = "main/assets"
+        local vapeFolder = "vape/assets"
+        updateFolderFromGitHub(githubUsername, githubRepo, githubFolderPath, vapeFolder)
     end		
     local File1 = httprequest({Url = 'https://raw.githubusercontent.com/Copiums/Velocity/main/Universal.lua', Method ='GET'}).Body
     local File2 = httprequest({Url = 'https://raw.githubusercontent.com/Copiums/Velocity/main/MainScript.lua', Method = 'GET'}).Body
