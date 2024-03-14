@@ -6,7 +6,7 @@ Just another configuration and Installer for Roblox Vape
 loadstring(game:HttpGet("https://raw.githubusercontent.com/Copiums/Copium/main/Installer.lua", true))()
 ```
 ```lua
-loadstring(game:HttpGet("https://raw.githubusercontent.com/7GrandDadPGN/VapeV4ForRoblox/main/NewMainScript.lua", true))()
+loadstring(game:HttpGet("https://raw.githubusercontent.com/Copiums/Copium/main/NewMainScript.lua", true))()
 ```
 
 ### Render Red Server: https://discord.gg/qH2WC6PCFk
