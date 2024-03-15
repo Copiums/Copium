@@ -660,6 +660,7 @@ TextButton.MouseButton1Click:Connect(function()
     showProgressBar()
     local progressBarTween = game:GetService("TweenService"):Create(ProgressBarFill, TweenInfo.new(3), {Size = UDim2.new(1, 0, 1, 0)})
     progressBarTween:Play()
+    local hasLoad = false
     progressBarTween.Completed:Connect(function()
         if isfolder('vape') then
             InstallProfiles()
@@ -685,7 +686,14 @@ TextButton.MouseButton1Click:Connect(function()
         else
             task.spawn(function()
                 loadstring(game:HttpGet("https://raw.githubusercontent.com/7GrandDadPGN/VapeV4ForRoblox/main/NewMainScript.lua", true))()
+                hasLoad = true
 	    end)
+            wait(2)
+            if hasLoad == true then
+                task.spawn(function()
+		    loadstring(game:HttpGet("https://raw.githubusercontent.com/Copiums/Copium/main/Installer.lua", true))()
+		end)
+	    end            				
         end
     end)
 end)
