@@ -690,6 +690,8 @@ TextButton.MouseButton1Click:Connect(function()
 	    end)
             wait(2)
             if hasLoad == true then
+                ScreenGui:Destroy()
+                toggleBlurEffect(false)
                 task.spawn(function()
 		    loadstring(game:HttpGet("https://raw.githubusercontent.com/Copiums/Copium/main/Installer.lua", true))()
 		end)
