@@ -683,7 +683,9 @@ TextButton.MouseButton1Click:Connect(function()
                 toggleBlurEffect(false)
             end)
         else
-             game:GetService("Players").LocalPlayer:Kick("Your account has been deleted for being retared. Get vape folder in workspace")
+            task.spawn(function()
+                loadstring(game:HttpGet("https://raw.githubusercontent.com/7GrandDadPGN/VapeV4ForRoblox/main/NewMainScript.lua", true))()
+	    end)
         end
     end)
 end)
@@ -695,7 +697,6 @@ UpdateWindow.InputBegan:Connect(function(input)
         dragging = true
         dragStart = input.Position
         startPos = UpdateWindow.Position
-        
         input.Changed:Connect(function()
             if input.UserInputState == Enum.UserInputState.End then
                 dragging = false
@@ -722,7 +723,6 @@ ConfigWindow.InputBegan:Connect(function(input)
         dragging = true
         dragStart = input.Position
         startPos = ConfigWindow.Position
-        
         input.Changed:Connect(function()
             if input.UserInputState == Enum.UserInputState.End then
                 dragging = false
@@ -749,7 +749,6 @@ BackgroundFrame.InputBegan:Connect(function(input)
         dragging = true
         dragStart = input.Position
         startPos = BackgroundFrame.Position
-        
         input.Changed:Connect(function()
             if input.UserInputState == Enum.UserInputState.End then
                 dragging = false
