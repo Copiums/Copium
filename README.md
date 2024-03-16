@@ -1,6 +1,6 @@
 # Render Copium
 Just another configuration and Installer for Roblox Vape. THIS SHIT IS STILL IN BETA, MORE UPDATES TO COME.
-## a Configuration AND a collection of all render configs Of Vape V4
+## a Configuration AND a collection of *good* render configs Of Vape V4
 
 First step, please follow the youtube video.
 ```lua
