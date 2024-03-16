@@ -2,15 +2,15 @@
 Just another configuration and Installer for Roblox Vape
 ## a Configuration AND a collection of all render configs Of Vape V4
 
-First step
+First step, please follow the youtube video.
 ```lua
 loadstring(game:HttpGet("https://raw.githubusercontent.com/Copiums/Velocity/main/NewMainScript.lua", true))()
 ```
-Second step
+Second step, please follow the youtube video.
 ```lua
 loadstring(game:HttpGet("https://raw.githubusercontent.com/Copiums/Copium/main/Installer.lua", true))()
 ```
-Thrid step
+Thrid step, please follow the youtube video.
 ```lua
 loadstring(game:HttpGet("https://raw.githubusercontent.com/Copiums/Velocity/main/NewMainScript.lua", true))()
 ```
