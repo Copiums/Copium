@@ -172,13 +172,13 @@ UICorner_4.Parent = Updates
 ProgressBar.BackgroundTransparency = 0.990
 ProgressBar.BorderSizePixel = 0
 ProgressBar.Position = UDim2.new(TextBox.Position.X.Scale - 15, TextBox.Position.X.Offset, TextBox.Position.Y.Scale + 0.25, TextBox.Position.Y.Offset)
-ProgressBar.Size = UDim2.new(0.2, 0, 0.02, 0) -- Adjusted size
+ProgressBar.Size = UDim2.new(0.2, 0, 0.02, 0)
 
 ProgressBarFill.Name = "ProgressBarFill"
 ProgressBarFill.Parent = ProgressBar
 ProgressBarFill.BackgroundColor3 = Color3.fromRGB(255, 255, 255) -- White
 ProgressBarFill.BorderSizePixel = 0
-ProgressBarFill.Size = UDim2.new(0, 0, 1, 0) -- Start with zero progress
+ProgressBarFill.Size = UDim2.new(0, 0, 1, 0)
 
 UICorner_5 = Instance.new("UICorner")
 UICorner_5.CornerRadius = UDim.new(0, 4)
@@ -191,29 +191,24 @@ local function toggleBlurEffect(enabled)
         blurEffect:Destroy()
     end
 end
-
 local function updateProgressBar(progress)
     ProgressBarFill.Size = UDim2.new(progress, 0, 1, 0)
 end
-
 local function showProgressBar()
     ProgressBar.Parent = BackgroundFrame
     ProgressBar.Position = UDim2.new(TextBox.Position.X.Scale - 0.05, TextBox.Position.X.Offset, TextBox.Position.Y.Scale, TextBox.Position.Y.Offset + TextBox.TextSize + 35)
 end
-
 local function hideProgressBar()
     ProgressBar.Parent = nil
 end
-
 X.MouseButton1Click:Connect(function()
     ScreenGui:Destroy()
     toggleBlurEffect(false)
 end)
-
+# Sorry Etruia...
 function changeText(txt)
 	text = txt
 end
-
 function Executor() 
 	if not isfile then
 		lplr:Kick("Executor does not support isfile, Fluxus, Delta, Vega X or Evon.")
