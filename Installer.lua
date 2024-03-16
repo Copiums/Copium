@@ -400,7 +400,7 @@ Updates.MouseButton1Click:Connect(function()
     UpdatesTextButton.Position = UDim2.new(0.05, 0, 0.2, 0)
     UpdatesTextButton.Size = UDim2.new(0.387690693, 0, 0.182094902, 0)
     UpdatesTextButton.Font = Enum.Font.Gotham
-    UpdatesTextButton.Text = "Update 1 - Added MoonAura"
+    UpdatesTextButton.Text = "Update 1 - Added Velocity"
     UpdatesTextButton.TextColor3 = Color3.fromRGB(255, 255, 255)
     UpdatesTextButton.TextSize = 25.000
     local X_UpdateWindow = X:Clone()
