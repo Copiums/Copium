@@ -205,7 +205,7 @@ X.MouseButton1Click:Connect(function()
     ScreenGui:Destroy()
     toggleBlurEffect(false)
 end)
-# Sorry Etruia...
+-- Sorry Etruia...
 function changeText(txt)
 	text = txt
 end
