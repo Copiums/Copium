@@ -176,7 +176,7 @@ ProgressBar.Size = UDim2.new(0.2, 0, 0.02, 0)
 
 ProgressBarFill.Name = "ProgressBarFill"
 ProgressBarFill.Parent = ProgressBar
-ProgressBarFill.BackgroundColor3 = Color3.fromRGB(255, 255, 255) -- White
+ProgressBarFill.BackgroundColor3 = Color3.fromRGB(255, 255, 255) -- White haha no black
 ProgressBarFill.BorderSizePixel = 0
 ProgressBarFill.Size = UDim2.new(0, 0, 1, 0)
 
