@@ -272,6 +272,9 @@ end
 local customassetcheck = true
 function Velocity()
     ResetProfiles()
+    if isfolder('vape/Render') then
+        delfolder('vape/Render')	
+    end
     if isfile('vape/CustomModules/6872274481.lua') then
         delfile('vape/CustomModules/6872274481.lua')	
     end
@@ -308,6 +311,9 @@ end
 
 function SP()
     ResetProfiles()
+    if isfolder('vape/Render') then
+        delfolder('vape/Render')	
+    end
     if isfile('vape/CustomModules/6872274481.lua') then
         delfile('vape/CustomModules/6872274481.lua')	
     end
