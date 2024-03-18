@@ -465,7 +465,7 @@ ConfigTextButton.MouseButton1Click:Connect(function()
         local progressBarTween = game:GetService("TweenService"):Create(ProgressBarFill, TweenInfo.new(3), {Size = UDim2.new(1, 0, 1, 0)})
         progressBarTween:Play()
         progressBarTween.Completed:Connect(function()
-            if isfolder('vape') then
+            if isfolder('vape') and isfolder('vape/Render') then
                 Etruia()
 		wait(3)		
                 Notification()
@@ -487,7 +487,7 @@ ConfigTextButton.MouseButton1Click:Connect(function()
                     toggleBlurEffect(false)
                 end)		
             else
-	        game:GetService("Players").LocalPlayer:Kick("Your account has been deleted for being retarded. I had to install that shit for you.")
+	        game:GetService("Players").LocalPlayer:Kick("Your account has been deleted for being retarded. Please Install Render First by going to discord.gg/render")
             end
         end)
     end)
@@ -511,7 +511,7 @@ ConfigTextButton.MouseButton1Click:Connect(function()
         local progressBarTween = game:GetService("TweenService"):Create(ProgressBarFill, TweenInfo.new(3), {Size = UDim2.new(1, 0, 1, 0)})
         progressBarTween:Play()
         progressBarTween.Completed:Connect(function()
-            if isfolder('vape') then
+            if isfolder('vape') and isfolder('vape/Render') then
                 RenderRed()
 		wait(3)
 		hideProgressBar()					
@@ -532,11 +532,7 @@ ConfigTextButton.MouseButton1Click:Connect(function()
                     toggleBlurEffect(false)
                 end)					
             else
-                task.spawn(function()
-                    loadstring(game:HttpGet("https://raw.githubusercontent.com/7GrandDadPGN/VapeV4ForRoblox/main/NewMainScript.lua", true))()
-                end)
-                wait(10)
-	        game:GetService("Players").LocalPlayer:Kick("Your account has been deleted for being retarded. I had to install that shit for you.")
+	        game:GetService("Players").LocalPlayer:Kick("Your account has been deleted for being retarded. Please Install Render First by going to discord.gg/render")
             end
         end)
     end)
