@@ -4,7 +4,7 @@ Just another configuration and Installer for Roblox Vape. THIS SHIT IS STILL IN 
 
 
 # IF YOU'RE INSTALLING SP+ OR VELOCITY ONLY:
-First step, please follow the youtube video.
+First step, please follow the youtube video. IT'S BASED ON THE YOUTUBE VIDEO SO GO WATCH IT BEFORE INSTALLING.
 ```lua
 loadstring(game:HttpGet("https://raw.githubusercontent.com/Copiums/Velocity/main/NewMainScript.lua", true))()
 ```
