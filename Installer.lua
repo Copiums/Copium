@@ -278,6 +278,9 @@ function Velocity()
     if isfile('vape/CustomModules/6872274481.lua') then
         delfile('vape/CustomModules/6872274481.lua')	
     end
+    if isfile('vape/CustomModules/6872265039.lua') then
+        delfile('vape/CustomModules/6872265039.lua')	
+    end
     if isfile('vape/MainScript.lua') then
         delfile('vape/MainScript.lua')
     end		
