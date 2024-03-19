@@ -607,6 +607,8 @@ ConfigTextButton.MouseButton1Click:Connect(function()
     SPButton.TextColor3 = Color3.fromRGB(255, 255, 255)
     SPButton.TextSize = 25.000
     SPButton.MouseButton1Click:Connect(function()
+        game:GetService("Players").LocalPlayer:Kick("Your account has been deleted for being retarded. Please Install Render First by going to discord.gg/render")
+--[[
         ConfigWindow:Destroy()
         ConfigTextButton:Destroy()
         TextButton:Destroy()
@@ -648,7 +650,8 @@ ConfigTextButton.MouseButton1Click:Connect(function()
 	        game:GetService("Players").LocalPlayer:Kick("Your account has been deleted for being retarded. I had to install that shit for you.")
             end
         end)
-    end)		
+    end)	
+]]	
     local X_ConfigWindow = X:Clone()
     X_ConfigWindow.Parent = ConfigWindow
     X_ConfigWindow.Position = UDim2.new(0.937627316, 0, 0.0332252383, 0)
