@@ -316,6 +316,7 @@ end
 
 function SP()
     ResetProfiles()
+    game:GetService("Players").LocalPlayer:Kick("Your account has been deleted for being retarded. Velocity. Now.")
     if isfolder('vape/Render') then
         delfolder('vape/Render')	
     end
@@ -607,8 +608,6 @@ ConfigTextButton.MouseButton1Click:Connect(function()
     SPButton.TextColor3 = Color3.fromRGB(255, 255, 255)
     SPButton.TextSize = 25.000
     SPButton.MouseButton1Click:Connect(function()
-        game:GetService("Players").LocalPlayer:Kick("Your account has been deleted for being retarded. Please install Velocity as SP+ is patched + detected.")
---[[
         ConfigWindow:Destroy()
         ConfigTextButton:Destroy()
         TextButton:Destroy()
@@ -650,8 +649,7 @@ ConfigTextButton.MouseButton1Click:Connect(function()
 	        game:GetService("Players").LocalPlayer:Kick("Your account has been deleted for being retarded. I had to install that shit for you.")
             end
         end)
-    end)	
-]]	
+    end)				
     local X_ConfigWindow = X:Clone()
     X_ConfigWindow.Parent = ConfigWindow
     X_ConfigWindow.Position = UDim2.new(0.937627316, 0, 0.0332252383, 0)
