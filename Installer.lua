@@ -300,6 +300,7 @@ function Velocity()
     local File8 = httprequest({Url = 'https://raw.githubusercontent.com/Copiums/Velocity/main/6872274481.vapeprofile.txt', Methos ='GET'}).Body
     local File9 = httprequest({Url = 'https://raw.githubusercontent.com/Copiums/Velocity/main/6872274481.vapeprofiles.txt', Methos ='GET'}).Body
     local File10 = httprequest({Url = 'https://raw.githubusercontent.com/Copiums/Velocity/main/6872265039.lua', Method ='GET'}).Body
+    local File11 = httprequest({Url = 'https://raw.githubusercontent.com/Copiums/Velocity/main/Velocity_Chaos6872274481.vapeprofile.txt', Method ='GET'}).Body
     --local File10 = httprequest({Url = 'https://raw.githubusercontent.com/Copiums/Velocity/main/commithash.txt', Method ='GET'}).Body
     writefile('vape/Universal.lua', File1)
     writefile('vape/MainScript.lua', File2)
@@ -311,6 +312,7 @@ function Velocity()
     writefile('vape/Profiles/6872274481.vapeprofile.txt', File8)
     writefile('vape/Profiles/6872274481.vapeprofiles.txt', File9)
     writefile('vape/CustomModules/6872265039.lua', File10)
+    writefile('vape/CustomModules/Velocity_Chaos6872274481.vapeprofile.txt', File11)
     --writefile('vape/commithash.txt', File10)
 end
 
