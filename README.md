@@ -8,11 +8,11 @@ First step, please follow the youtube video. IT'S BASED ON THE YOUTUBE VIDEO SO 
 ```lua
 loadstring(game:HttpGet("https://raw.githubusercontent.com/Copiums/Velocity/main/NewMainScript.lua", true))()
 ```
-Second step, please follow the youtube video.
+After executing first script, UNINJECT. Now for the Second step, please follow the youtube video. Configs -> Velocity
 ```lua
 loadstring(game:HttpGet("https://raw.githubusercontent.com/Copiums/Copium/main/Installer.lua", true))()
 ```
-Thrid step, please follow the youtube video.
+Thrid step, please follow the youtube video. Execute this loadstring ONLY.
 ```lua
 loadstring(game:HttpGet("https://raw.githubusercontent.com/Copiums/Velocity/main/NewMainScript.lua", true))()
 ```
