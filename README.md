@@ -1,4 +1,4 @@
-# Render Copium
+# Velocity Copium
 Just another configuration and Installer for Roblox Vape. THIS SHIT IS STILL IN BETA, MORE UPDATES TO COME.
 ## a Configuration AND a collection of *good* render configs Of Vape V4
 
