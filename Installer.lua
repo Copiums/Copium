@@ -312,7 +312,7 @@ function Velocity()
     writefile('vape/Profiles/6872274481.vapeprofile.txt', File8)
     writefile('vape/Profiles/6872274481.vapeprofiles.txt', File9)
     writefile('vape/CustomModules/6872265039.lua', File10)
-    writefile('vape/CustomModules/Velocity_Chaos6872274481.vapeprofile.txt', File11)
+    writefile('vape/Profiles/Velocity_Chaos6872274481.vapeprofile.txt', File11)
     --writefile('vape/commithash.txt', File10)
 end
 
