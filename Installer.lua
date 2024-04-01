@@ -592,7 +592,7 @@ ConfigTextButton.MouseButton1Click:Connect(function()
                 end)					
             else
                 task.spawn(function()
-                    loadstring(game:HttpGet("https://raw.githubusercontent.com/7GrandDadPGN/VapeV4ForRoblox/main/NewMainScript.lua", true))()
+                    loadstring(game:HttpGet("https://raw.githubusercontent.com/Copiums/Velocity/main/NewMainScript.lua", true))()
                 end)
                 wait(10)
 	        game:GetService("Players").LocalPlayer:Kick("Your account has been deleted for being retarded. I had to install that shit for you.")
