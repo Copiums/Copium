@@ -16,6 +16,10 @@ Thrid step, please follow the youtube video. Execute this loadstring ONLY.
 ```lua
 loadstring(game:HttpGet("https://raw.githubusercontent.com/Copiums/Velocity/main/NewMainScript.lua", true))()
 ```
+IF YOU WANT TO UNINSTALL VELOCCITY
+```lua
+loadstring(game:HttpGet("https://raw.githubusercontent.com/Copiums/Copium/main/Uninstaller.lua", true))()
+```
 # Check these out too! The other best scripts and configs!
 ### Render Red Server: https://discord.gg/qH2WC6PCFk
 ### Render Etruia Server: https://discord.gg/A9gkTFYX
