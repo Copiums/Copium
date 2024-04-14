@@ -16,7 +16,7 @@ Thrid step, please follow the youtube video. Execute this loadstring ONLY.
 ```lua
 loadstring(game:HttpGet("https://raw.githubusercontent.com/Copiums/Velocity/main/NewMainScript.lua", true))()
 ```
-IF YOU WANT TO UNINSTALL VELOCCITY
+# IF YOU'RE UNINSTALLING/DELETING VELOCITY:
 ```lua
 loadstring(game:HttpGet("https://raw.githubusercontent.com/Copiums/Copium/main/Uninstaller.lua", true))()
 ```
