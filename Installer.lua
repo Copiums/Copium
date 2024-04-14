@@ -681,7 +681,7 @@ TextButton.MouseButton1Click:Connect(function()
     local hasLoad = false
     progressBarTween.Completed:Connect(function()
         if isfolder('vape') then
-            InstallProfiles()
+            --InstallProfiles()
 	    wait(3)
             Notification()
 	    hideProgressBar()	
