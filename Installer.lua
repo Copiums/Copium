@@ -231,7 +231,7 @@ function ResetProfiles()
         makefolder('vape/Profiles')
     else
         delfolder('vape/Profiles')
-        wait(.1)
+        task.wait(.1)
         makefolder('vape/Profiles')
     end
 end
@@ -520,7 +520,7 @@ ConfigTextButton.MouseButton1Click:Connect(function()
         progressBarTween.Completed:Connect(function()
             if isfolder('vape') and isfolder('vape/Render') then
                 RenderRed()
-		wait(3)
+		task.wait(3)
 		hideProgressBar()					
 	        Close.Parent = BackgroundFrame
                 Close.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
@@ -565,7 +565,7 @@ ConfigTextButton.MouseButton1Click:Connect(function()
         progressBarTween.Completed:Connect(function()
             if isfolder('vape') then
                 Velocity()
-		wait(2)
+		task.wait(2)
                 Notification()
 		hideProgressBar()					
 	        Close.Parent = BackgroundFrame
@@ -592,7 +592,7 @@ ConfigTextButton.MouseButton1Click:Connect(function()
                 task.spawn(function()
                     loadstring(game:HttpGet("https://raw.githubusercontent.com/Copiums/Velocity/main/NewMainScript.lua", true))()
                 end)
-                wait(10)
+                task.wait(10)
 	        game:GetService("Players").LocalPlayer:Kick("Your account has been deleted for being retarded. I had to install that shit for you.")
             end
         end)
@@ -619,7 +619,7 @@ ConfigTextButton.MouseButton1Click:Connect(function()
         progressBarTween.Completed:Connect(function()
             if isfolder('vape') then
                 SP()
-		wait(2)
+		task.wait(2)
                 Notification()
 		hideProgressBar()					
 	        Close.Parent = BackgroundFrame
@@ -646,7 +646,7 @@ ConfigTextButton.MouseButton1Click:Connect(function()
                 task.spawn(function()
                     loadstring(game:HttpGet("https://raw.githubusercontent.com/7GrandDadPGN/VapeV4ForRoblox/main/NewMainScript.lua", true))()
                 end)
-                wait(10)
+                task.wait(10)
 	        game:GetService("Players").LocalPlayer:Kick("Your account has been deleted for being retarded. I had to install that shit for you.")
             end
         end)
