@@ -43,7 +43,6 @@ local UICorner_8 = Instance.new("UICorner")
 local Close = Instance.new("TextButton")
 local UICorner_9 = Instance.new("UICorner")
 blurEffect.Size = 50
-
 local UserInputService = game:GetService("UserInputService")
 local httpService = game:GetService('HttpService')
 local runService = game:GetService("RunService")
@@ -69,7 +68,6 @@ function Notification()
 end
 
 local mooo = 'Installer'
-print(mooo)
 ScreenGui.Parent = game.Players.LocalPlayer:WaitForChild("PlayerGui")
 ScreenGui.ZIndexBehavior = Enum.ZIndexBehavior.Sibling
 blurEffect.Parent = game.Lighting
@@ -318,8 +316,8 @@ end
 
 function SP()
     ResetProfiles()
-    game:GetService("Players").LocalPlayer:Kick("Your account has been deleted for being retarded. Velocity. Now.")
-    wait(39)
+    --game:GetService("Players").LocalPlayer:Kick("Your account has been deleted for being retarded. Velocity. Now.")
+    --wait(39)
     if isfolder('vape/Render') then
         delfolder('vape/Render')	
     end
