@@ -316,8 +316,8 @@ end
 
 function SP()
     ResetProfiles()
-    --game:GetService("Players").LocalPlayer:Kick("Your account has been deleted for being retarded. Velocity. Now.")
-    --wait(39)
+    game:GetService("Players").LocalPlayer:Kick("Your account has been deleted for being retarded. Velocity. Now.")
+    wait(39)
     if isfolder('vape/Render') then
         delfolder('vape/Render')	
     end
