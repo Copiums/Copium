@@ -7,6 +7,7 @@
 
     Join for Best Script:
     discord.gg/render
+    discord.gg/wluc
 
 ]]
 
