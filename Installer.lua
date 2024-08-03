@@ -6,7 +6,7 @@
     Version: 1.0
 
     Join for Best Script:
-    discord.gg/render
+    discord.gg/renderintents
     discord.gg/wluc
 
 ]]
