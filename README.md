@@ -23,4 +23,4 @@ loadstring(game:HttpGet("https://raw.githubusercontent.com/Copiums/Copium/main/U
 # Check these out too! The other best scripts and configs!
 ### Render Red Server: https://discord.gg/qH2WC6PCFk
 ### Render Etruia Server: https://discord.gg/A9gkTFYX
-### Normal Render Server: https://discord.gg/render
+### Normal Render Server: https://discord.gg/renderintents
