@@ -7,7 +7,9 @@
 
     Join for Best Script:
     discord.gg/renderintents
-    discord.gg/wluc
+    discord.gg/linkvertise
+
+    THIS IS OUTDATED, DO NOT USE UNLESS YOU'RE ON MOBILE, I HAVEN'T TRIED ON MOBILE YET.
 
 ]]
 
