@@ -12,53 +12,59 @@
     THIS IS OUTDATED, DO NOT USE UNLESS YOU'RE ON MOBILE, I HAVEN'T TRIED ON MOBILE YET.
 
 ]]
-
-local ScreenGui = Instance.new("ScreenGui")
-local BackgroundFrame = Instance.new("Frame")
-local UICorner = Instance.new("UICorner")
-local UIStroke = Instance.new("UIStroke")
-local UIGradient = Instance.new("UIGradient")
-local UIGradient2 = Instance.new("UIGradient")
-local TextButton = Instance.new("TextButton")
-local ConfigTextButton = Instance.new("TextButton")
-local UpdatesTextButton = Instance.new("TextButton")
-local ConfigTextsButton = Instance.new("TextButton")
-local ConfigTextssButton = Instance.new("TextButton")
-local SPButton = Instance.new("TextButton")
-local VelocityButton = Instance.new("TextButton")
-local UICorner_2 = Instance.new("UICorner")
-local X = Instance.new("ImageButton")
-local UICorner_3 = Instance.new("UICorner")
-local Logo = Instance.new("ImageButton")
-local TextBox = Instance.new("TextButton")
-local Updates = Instance.new("ImageButton")
-local UICorner_4 = Instance.new("UICorner")
-local ProgressBar = Instance.new("Frame")
-local ProgressBarFill = Instance.new("Frame")
-local EtruiaProgressBar = Instance.new("Frame")
-local EtruiaProgressBarFill = Instance.new("Frame")
-local RenderRedProgressBar = Instance.new("Frame")
-local RenderRedProgressBarFill = Instance.new("Frame")
-local UICorner_6 = Instance.new("UICorner")
-local blurEffect = Instance.new("BlurEffect")
-local UICorner_7 = Instance.new("UICorner")
-local UICorner_8 = Instance.new("UICorner")
-local Close = Instance.new("TextButton")
-local UICorner_9 = Instance.new("UICorner")
-blurEffect.Size = 50
-local UserInputService = game:GetService("UserInputService")
-local httpService = game:GetService('HttpService')
-local runService = game:GetService("RunService")
-local workspace = game:GetService("Workspace")
-local gameCamera = workspace.CurrentCamera
-local lplr = game.Players.LocalPlayer
-local executor = (identifyexecutor or getexecutorname or function() return 'your executor' end)()
+local copium: table = {};
+local cloneref: (obj: any) -> any = cloneref or function(obj)
+    return obj;
+end;
+local ScreenGui: ScreenGui = Instance.new("ScreenGui");
+local BackgroundFrame: Frame = Instance.new("Frame");
+local UICorner: UICorner = Instance.new("UICorner");
+local UIStroke: UIStroke = Instance.new("UIStroke");
+local UIGradient: UIGradient = Instance.new("UIGradient");
+local UIGradient2: UIGradient = Instance.new("UIGradient");
+local TextButton: TextButton = Instance.new("TextButton");
+local ConfigTextButton: TextButton = Instance.new("TextButton");
+local UpdatesTextButton: TextButton = Instance.new("TextButton");
+local ConfigTextsButton: TextButton = Instance.new("TextButton");
+local ConfigTextssButton: TextButton = Instance.new("TextButton");
+local SPButton: TextButton = Instance.new("TextButton");
+local VelocityButton: TextButton = Instance.new("TextButton");
+local UICorner_2: UICorner = Instance.new("UICorner");
+local X: ImageButton = Instance.new("ImageButton");
+local UICorner_3: UICorner = Instance.new("UICorner");
+local Logo: ImageButton = Instance.new("ImageButton");
+local TextBox: TextButton = Instance.new("TextButton");
+local Updates: ImageButton = Instance.new("ImageButton");
+local UICorner_4: UICorner = Instance.new("UICorner");
+local ProgressBar: Frame = Instance.new("Frame");
+local ProgressBarFill: Frame = Instance.new("Frame");
+local EtruiaProgressBar: Frame = Instance.new("Frame");
+local EtruiaProgressBarFill: Frame = Instance.new("Frame");
+local RenderRedProgressBar: Frame = Instance.new("Frame");
+local RenderRedProgressBarFill: Frame = Instance.new("Frame");
+local UICorner_6: UICorner = Instance.new("UICorner");
+local blurEffect: BlurEffect = Instance.new("BlurEffect");
+local UICorner_7: UICorner = Instance.new("UICorner");
+local UICorner_8: UICorner = Instance.new("UICorner");
+local Close: TextButton = Instance.new("TextButton");
+local UICorner_9: UICorner = Instance.new("UICorner");
+blurEffect.Size = 50;
+local UserInputService: UserInputService = cloneref(game:GetService("UserInputService"));
+local httpService: HttpService = cloneref(game:GetService('HttpService'));
+local runService: RunService = cloneref(game:GetService("RunService"));
+local workspace: Workspace = cloneref(game:GetService("Workspace"));
+local gameCamera: Camera = workspace.CurrentCamera;
+local playersService: Players = cloneref(game:GetService('Players'));
+local lplr: Player = playersService.LocalPlayer;
+local executor: any = (identifyexecutor or getexecutorname or function() return 'your executor' end)()
 local getcustomasset = getsynasset or getcustomasset or function(location) return "rbxasset://"..location end
 local httprequest = (http and http.request or http_request or fluxus and fluxus.request or request or function() end)
-local isfile = isfile or function(file)
-    local success, filecontents = pcall(function() return readfile(file) end)
-    return success and type(filecontents) == 'string'
-end 
+local isfile: (string) -> boolean = isfile or function(file: string): boolean
+    local success: boolean, filecontents: any = pcall(function() 
+        return readfile(file); 
+    end);
+    return success and type(filecontents) == 'string';
+end;
 
 function Notification()
     game.StarterGui:SetCore("SendNotification", {
@@ -67,11 +73,11 @@ function Notification()
         Duration = 9;
         Button1 = "Ok";
         Button2 = "No";
-    })
-end
+    });
+end;
 
-local mooo = 'Installer'
-ScreenGui.Parent = game.Players.LocalPlayer:WaitForChild("PlayerGui")
+local mooo: any = 'Installer';
+ScreenGui.Parent = lplr:WaitForChild("PlayerGui")
 ScreenGui.ZIndexBehavior = Enum.ZIndexBehavior.Sibling
 blurEffect.Parent = game.Lighting
 
@@ -185,202 +191,235 @@ UICorner_5 = Instance.new("UICorner")
 UICorner_5.CornerRadius = UDim.new(0, 4)
 UICorner_5.Parent = ProgressBar
 
-local function toggleBlurEffect(enabled)
-    if enabled then
-        blurEffect.Parent = game.Lighting
+local function toggleBlurEffect(v: any): any
+    if v then
+        blurEffect.Parent = game.Lighting;
     else
-        blurEffect:Destroy()
-    end
-end
-local function updateProgressBar(progress)
-    ProgressBarFill.Size = UDim2.new(progress, 0, 1, 0)
-end
-local function showProgressBar()
-    ProgressBar.Parent = BackgroundFrame
-    ProgressBar.Position = UDim2.new(TextBox.Position.X.Scale - 0.05, TextBox.Position.X.Offset, TextBox.Position.Y.Scale, TextBox.Position.Y.Offset + TextBox.TextSize + 35)
-end
-local function hideProgressBar()
-    ProgressBar.Parent = nil
-end
+        blurEffect:Destroy();
+    end;
+end;
+
+local function updateProgressBar(progress: number?): any
+    ProgressBarFill.Size = UDim2.new(progress, 0, 1, 0);
+end;
+
+local function showProgressBar(): (any, any)
+    ProgressBar.Parent = BackgroundFrame;
+    ProgressBar.Position = UDim2.new(TextBox.Position.X.Scale - 0.05, TextBox.Position.X.Offset, TextBox.Position.Y.Scale, TextBox.Position.Y.Offset + TextBox.TextSize + 35);
+end;
+
+local function hideProgressBar(): (any, any)
+    ProgressBar.Parent = nil;
+end;
+
 X.MouseButton1Click:Connect(function()
-    ScreenGui:Destroy()
-    toggleBlurEffect(false)
-end)
+    ScreenGui:Destroy();
+    toggleBlurEffect(false);
+end);
+
 -- Sorry Etruia...
 function changeText(txt)
-	text = txt
-end
+	text = txt;
+end;
+
 function Executor() 
 	if not isfile then
-		lplr:Kick("Executor does not support isfile, Fluxus, Delta, Vega X or Evon.")
-	end
+		lplr:Kick("Executor does not support isfile, Fluxus, Delta, Vega X or Evon.");
+	end;
 	if not readfile then
-		lplr:Kick("Executor does not support readfile, Fluxus, Delta, Vega X or Evon.")
-	end
+		lplr:Kick("Executor does not support readfile, Fluxus, Delta, Vega X or Evon.");
+	end;
 	if not makefolder then
 		lplr:Kick("Executor does not support makefolder, use Fluxus, Delta, Vega X or Evon.")
-	end
+	end;
 	if not writefile then
-		lplr:Kick("Executor does not support writefile, use Fluxus, Delta, Vega X or Evon.")
-	end
+		lplr:Kick("Executor does not support writefile, use Fluxus, Delta, Vega X or Evon.");
+	end;
 	if not delfile then
-		lplr:Kick("Executor does not support delfile, use Fluxus, Delta, Vega X or Evon.")
-	end
-end
-Executor()
+		lplr:Kick("Executor does not support delfile, use Fluxus, Delta, Vega X or Evon.");
+	end;
+end;
+Executor();
 
 function ResetProfiles()
     if not isfolder('vape/Profiles') then
-        makefolder('vape/Profiles')
+        makefolder('vape/Profiles');
     else
-        delfolder('vape/Profiles')
-        task.wait(.1)
-        makefolder('vape/Profiles')
-    end
-end
+        delfolder('vape/Profiles');
+        task.wait(.1);
+        makefolder('vape/Profiles');
+    end;
+end;
 
 function ResetCustomModules()
     if not isfolder('vape/CustomModules') then
-        makefolder('vape/CustomModules')
+        makefolder('vape/CustomModules');
     else
-        delfolder('vape/CustomModules')
-        wait(.1)
-        makefolder('vape/CustomModules')
-    end
-end
+        delfolder('vape/CustomModules');
+        task.wait(.1);
+        makefolder('vape/CustomModules');
+    end;
+end;
 
-local complete = false
+local complete: boolean = false;
 function Etruia()
-    ResetProfiles()
-    local File1 = httprequest({Url = 'https://raw.githubusercontent.com/Sail100/EtruiaConfigStorage/main/EtruiaDevelopment/updatefilenew/6872265039.vapeprofile.txt', Method ='GET'}).Body
-    local File2 = httprequest({Url = 'https://raw.githubusercontent.com/Sail100/EtruiaConfigStorage/main/EtruiaDevelopment/updatefilenew/6872265039GUIPositions.vapeprofile.txt', Method = 'GET'}).Body
-    local File3 = httprequest({Url = 'https://raw.githubusercontent.com/Sail100/EtruiaConfigStorage/main/EtruiaDevelopment/updatefilenew/6872265039Voidware%20PinkGUIPositions.vapeprofile.txt', Method = 'GET'}).Body
-    local File4 = httprequest({Url = 'https://raw.githubusercontent.com/Sail100/EtruiaConfigStorage/main/EtruiaDevelopment/updatefilenew/6872274481.vapeprofile.txt', Method ='GET'}).Body
-    local File5 = httprequest({Url = 'https://raw.githubusercontent.com/Sail100/EtruiaConfigStorage/main/EtruiaDevelopment/updatefilenew/6872274481.vapeprofiles.txt', Method ='GET'}).Body
-    local File6 = httprequest({Url = 'https://raw.githubusercontent.com/Sail100/EtruiaConfigStorage/main/EtruiaDevelopment/updatefilenew/Voidware%20Pink6872265039.vapeprofile.txt', Method ='GET'}).Body
-    local File7 = httprequest({Url = 'https://raw.githubusercontent.com/Sail100/EtruiaConfigStorage/main/EtruiaDevelopment/updatefilenew/Voidware%20Pink6872274481.vapeprofile.txt', Method ='GET'}).Body
-    writefile('vape/Profiles/6872265039.vapeprofile.txt', File1)
-    writefile('vape/Profiles/6872265039GUIPositions.vapeprofile.txt', File2)
-    writefile('vape/Profiles/6872265039Voidware PinkGUIPositions.vapeprofile.txt', File3)
-    writefile('vape/Profiles/6872274481.vapeprofile.txt', File4)
-    writefile('vape/Profiles/6872274481.vapeprofiles.txt', File5)
-    writefile('vape/Profiles/Voidware Pink6872265039.vapeprofile.txt', File6)
-    writefile('vape/Profiles/Voidware Pink6872274481.vapeprofile.txt', File7)
-    loadfile('vape/NewMainScript.lua')()
-    Notification()
-end
+    ResetProfiles();
+    local urls: {string} = {
+        'https://raw.githubusercontent.com/Sail100/EtruiaConfigStorage/main/EtruiaDevelopment/updatefilenew/6872265039.vapeprofile.txt',
+        'https://raw.githubusercontent.com/Sail100/EtruiaConfigStorage/main/EtruiaDevelopment/updatefilenew/6872265039GUIPositions.vapeprofile.txt',
+        'https://raw.githubusercontent.com/Sail100/EtruiaConfigStorage/main/EtruiaDevelopment/updatefilenew/6872265039Voidware%20PinkGUIPositions.vapeprofile.txt',
+        'https://raw.githubusercontent.com/Sail100/EtruiaConfigStorage/main/EtruiaDevelopment/updatefilenew/6872274481.vapeprofile.txt',
+        'https://raw.githubusercontent.com/Sail100/EtruiaConfigStorage/main/EtruiaDevelopment/updatefilenew/6872274481.vapeprofiles.txt',
+        'https://raw.githubusercontent.com/Sail100/EtruiaConfigStorage/main/EtruiaDevelopment/updatefilenew/Voidware%20Pink6872265039.vapeprofile.txt',
+        'https://raw.githubusercontent.com/Sail100/EtruiaConfigStorage/main/EtruiaDevelopment/updatefilenew/Voidware%20Pink6872274481.vapeprofile.txt',
+    };
+    local filenames: {string} = {
+        'vape/Profiles/6872265039.vapeprofile.txt',
+        'vape/Profiles/6872265039GUIPositions.vapeprofile.txt',
+        'vape/Profiles/6872265039Voidware PinkGUIPositions.vapeprofile.txt',
+        'vape/Profiles/6872274481.vapeprofile.txt',
+        'vape/Profiles/6872274481.vapeprofiles.txt',
+        'vape/Profiles/Voidware Pink6872265039.vapeprofile.txt',
+        'vape/Profiles/Voidware Pink6872274481.vapeprofile.txt',
+    };
+    for i: number = 1, #urls do
+        local fileContent: string = httprequest({Url = urls[i], Method = 'GET'}).Body;
+        writefile(filenames[i], fileContent);
+    end;
+    loadfile('vape/NewMainScript.lua')();
+    Notification();
+end;
 
-local customassetcheck = true
+local customassetcheck: boolean = true;
 function Velocity()
     ResetProfiles()
-    if isfolder('vape/Render') then
-        delfolder('vape/Render')	
-    end
-    if isfile('vape/CustomModules/6872274481.lua') then
-        delfile('vape/CustomModules/6872274481.lua')	
-    end
-    if isfile('vape/CustomModules/6872265039.lua') then
-        delfile('vape/CustomModules/6872265039.lua')	
-    end
-    if isfile('vape/MainScript.lua') then
-        delfile('vape/MainScript.lua')
-    end		
-    if isfile('vape/GuiLibrary.lua') then
-        delfile('vape/GuiLibrary.lua')
-    end	
-    if isfile('vape/Universal.lua') then
-        delfile('vape/Universal.lua')
-    end		
-    local File1 = httprequest({Url = 'https://raw.githubusercontent.com/Copiums/Velocity/main/Universal.lua', Method ='GET'}).Body
-    local File2 = httprequest({Url = 'https://raw.githubusercontent.com/Copiums/Velocity/main/MainScript.lua', Method = 'GET'}).Body
-    local File3 = httprequest({Url = 'https://raw.githubusercontent.com/Copiums/Velocity/main/GuiLibrary.lua', Method = 'GET'}).Body
-    local File4 = httprequest({Url = 'https://raw.githubusercontent.com/Copiums/Velocity/main/6872274481.lua', Method ='GET'}).Body
-    local File5 = httprequest({Url = 'https://raw.githubusercontent.com/Copiums/Velocity/main/2619619496GUIPositions.vapeprofile.txt', Method ='GET'}).Body
-    local File6 = httprequest({Url = 'https://raw.githubusercontent.com/Copiums/Velocity/main/6872265039.vapeprofile.txt', Method ='GET'}).Body
-    local File7 = httprequest({Url = 'https://raw.githubusercontent.com/Copiums/Velocity/main/6872265039.vapeprofiles.txt', Methos ='GET'}).Body
-    local File8 = httprequest({Url = 'https://raw.githubusercontent.com/Copiums/Velocity/main/6872274481.vapeprofile.txt', Methos ='GET'}).Body
-    local File9 = httprequest({Url = 'https://raw.githubusercontent.com/Copiums/Velocity/main/6872274481.vapeprofiles.txt', Methos ='GET'}).Body
-    local File10 = httprequest({Url = 'https://raw.githubusercontent.com/Copiums/Velocity/main/6872265039.lua', Method ='GET'}).Body
-    local File11 = httprequest({Url = 'https://raw.githubusercontent.com/Copiums/Velocity/main/Velocity_Chaos6872274481.vapeprofile.txt', Method ='GET'}).Body
-    --local File10 = httprequest({Url = 'https://raw.githubusercontent.com/Copiums/Velocity/main/commithash.txt', Method ='GET'}).Body
-    writefile('vape/Universal.lua', File1)
-    writefile('vape/MainScript.lua', File2)
-    writefile('vape/GuiLibrary.lua', File3)
-    writefile('vape/CustomModules/6872274481.lua', File4)
-    writefile('vape/Profiles/2619619496GUIPositions.vapeprofile.txt', File5)
-    writefile('vape/Profiles/6872265039.vapeprofile.txt', File6)
-    writefile('vape/Profiles/6872265039.vapeprofiles.txt', File7)
-    writefile('vape/Profiles/6872274481.vapeprofile.txt', File8)
-    writefile('vape/Profiles/6872274481.vapeprofiles.txt', File9)
-    writefile('vape/CustomModules/6872265039.lua', File10)
-    writefile('vape/Profiles/Velocity_Chaos6872274481.vapeprofile.txt', File11)
-    --writefile('vape/commithash.txt', File10)
-end
+    local paths: {string} = {
+        'vape/Render',
+        'vape/CustomModules/6872274481.lua',
+        'vape/CustomModules/6872265039.lua',
+        'vape/MainScript.lua',
+        'vape/GuiLibrary.lua',
+        'vape/Universal.lua'
+    }
+    for i,v in next, paths do
+        if isfolder(v) then
+            delfolder(v);
+        elseif isfile(v) then
+            delfile(v);
+        end;
+    end;
+    local urls: {string} = {
+        'https://raw.githubusercontent.com/Copiums/Velocity/main/Universal.lua',
+        'https://raw.githubusercontent.com/Copiums/Velocity/main/MainScript.lua',
+        'https://raw.githubusercontent.com/Copiums/Velocity/main/GuiLibrary.lua',
+        'https://raw.githubusercontent.com/Copiums/Velocity/main/6872274481.lua',
+        'https://raw.githubusercontent.com/Copiums/Velocity/main/2619619496GUIPositions.vapeprofile.txt',
+        'https://raw.githubusercontent.com/Copiums/Velocity/main/6872265039.vapeprofile.txt',
+        'https://raw.githubusercontent.com/Copiums/Velocity/main/6872265039.vapeprofiles.txt',
+        'https://raw.githubusercontent.com/Copiums/Velocity/main/6872274481.vapeprofile.txt',
+        'https://raw.githubusercontent.com/Copiums/Velocity/main/6872274481.vapeprofiles.txt',
+        'https://raw.githubusercontent.com/Copiums/Velocity/main/6872265039.lua',
+        'https://raw.githubusercontent.com/Copiums/Velocity/main/Velocity_Chaos6872274481.vapeprofile.txt'
+    };
+    local filenames: {string} = {
+        'vape/Universal.lua',
+        'vape/MainScript.lua',
+        'vape/GuiLibrary.lua',
+        'vape/CustomModules/6872274481.lua',
+        'vape/Profiles/2619619496GUIPositions.vapeprofile.txt',
+        'vape/Profiles/6872265039.vapeprofile.txt',
+        'vape/Profiles/6872265039.vapeprofiles.txt',
+        'vape/Profiles/6872274481.vapeprofile.txt',
+        'vape/Profiles/6872274481.vapeprofiles.txt',
+        'vape/CustomModules/6872265039.lua',
+        'vape/Profiles/Velocity_Chaos6872274481.vapeprofile.txt'
+    }
+    for i: number = 1, #urls do
+        local fileContent: string = httprequest({Url = urls[i], Method = 'GET'}).Body;
+        writefile(filenames[i], fileContent);
+    end;
+end;
 
 function SP()
-    ResetProfiles()
-    game:GetService("Players").LocalPlayer:Kick("Your account has been deleted for being retarded. Velocity. Now.")
-    wait(39)
-    if isfolder('vape/Render') then
-        delfolder('vape/Render')	
-    end
-    if isfile('vape/CustomModules/6872274481.lua') then
-        delfile('vape/CustomModules/6872274481.lua')	
-    end
-    if isfile('vape/MainScript.lua') then
-        delfile('vape/MainScript.lua')
-    end		
-    if isfile('vape/GuiLibrary.lua') then
-        delfile('vape/GuiLibrary.lua')
-    end	
-    if isfile('vape/Universal.lua') then
-        delfile('vape/Universal.lua')
-    end		
-    local File1 = httprequest({Url = 'https://raw.githubusercontent.com/7GrandDadPGN/VapeV4ForRoblox/main/Universal.lua', Method ='GET'}).Body
-    local File2 = httprequest({Url = 'https://raw.githubusercontent.com/7GrandDadPGN/VapeV4ForRoblox/main/MainScript.lua', Method = 'GET'}).Body
-    local File3 = httprequest({Url = 'https://raw.githubusercontent.com/7GrandDadPGN/VapeV4ForRoblox/main/GuiLibrary.lua', Method = 'GET'}).Body
-    local File4 = httprequest({Url = 'https://raw.githubusercontent.com/Copiums/SP/main/6872274481.lua', Method ='GET'}).Body
-    local File5 = httprequest({Url = 'https://raw.githubusercontent.com/Copiums/SP/main/2619619496GUIPositions.vapeprofile.txt', Method ='GET'}).Body
-    local File6 = httprequest({Url = 'https://raw.githubusercontent.com/Copiums/SP/main/6872265039.vapeprofile.txt', Method ='GET'}).Body
-    local File7 = httprequest({Url = 'https://raw.githubusercontent.com/Copiums/SP/main/6872265039.vapeprofiles.txt', Methos ='GET'}).Body
-    local File8 = httprequest({Url = 'https://raw.githubusercontent.com/Copiums/SP/main/6872274481.vapeprofile.txt', Methos ='GET'}).Body
-    local File9 = httprequest({Url = 'https://raw.githubusercontent.com/Copiums/SP/main/6872274481.vapeprofiles.txt', Methos ='GET'}).Body
-    writefile('vape/Universal.lua', File1)
-    writefile('vape/MainScript.lua', File2)
-    writefile('vape/GuiLibrary.lua', File3)
-    writefile('vape/CustomModules/6872274481.lua', File4)
-    writefile('vape/Profiles/2619619496GUIPositions.vapeprofile.txt', File5)
-    writefile('vape/Profiles/6872265039.vapeprofile.txt', File6)
-    writefile('vape/Profiles/6872265039.vapeprofiles.txt', File7)
-    writefile('vape/Profiles/6872274481.vapeprofile.txt', File8)
-    writefile('vape/Profiles/6872274481.vapeprofiles.txt', File9)
-end
+    ResetProfiles();
+    lplr:Kick("Your account has been deleted for being retarded. Velocity. Now.");
+    wait(39);
+    local paths: {string} = {
+        'vape/Render',
+        'vape/CustomModules/6872274481.lua',
+        'vape/MainScript.lua',
+        'vape/GuiLibrary.lua',
+        'vape/Universal.lua'
+    }
+
+    for i,v in ipairs(paths) do
+        if isfolder(v) then
+            delfolder(v);
+        elseif isfile(v) then
+            delfile(v);
+        end;
+    end;
+    local urls: {string} = {
+        'https://raw.githubusercontent.com/7GrandDadPGN/VapeV4ForRoblox/main/Universal.lua',
+        'https://raw.githubusercontent.com/7GrandDadPGN/VapeV4ForRoblox/main/MainScript.lua',
+        'https://raw.githubusercontent.com/7GrandDadPGN/VapeV4ForRoblox/main/GuiLibrary.lua',
+        'https://raw.githubusercontent.com/Copiums/SP/main/6872274481.lua',
+        'https://raw.githubusercontent.com/Copiums/SP/main/2619619496GUIPositions.vapeprofile.txt',
+        'https://raw.githubusercontent.com/Copiums/SP/main/6872265039.vapeprofile.txt',
+        'https://raw.githubusercontent.com/Copiums/SP/main/6872265039.vapeprofiles.txt',
+        'https://raw.githubusercontent.com/Copiums/SP/main/6872274481.vapeprofile.txt',
+        'https://raw.githubusercontent.com/Copiums/SP/main/6872274481.vapeprofiles.txt'
+    };
+    local filenames: {string} = {
+        'vape/Universal.lua',
+        'vape/MainScript.lua',
+        'vape/GuiLibrary.lua',
+        'vape/CustomModules/6872274481.lua',
+        'vape/Profiles/2619619496GUIPositions.vapeprofile.txt',
+        'vape/Profiles/6872265039.vapeprofile.txt',
+        'vape/Profiles/6872265039.vapeprofiles.txt',
+        'vape/Profiles/6872274481.vapeprofile.txt',
+        'vape/Profiles/6872274481.vapeprofiles.txt'
+    };
+    for i: number = 1, #urls do
+        local fileContent: string = httprequest({Url = urls[i], Method = 'GET'}).Body;
+        writefile(filenames[i], fileContent);
+    end;
+end;
 
 function InstallProfiles()
     ResetProfiles()
-    local File1 = httprequest({Url = 'https://raw.githubusercontent.com/SystemXVoid/Render/source/scripts/Profiles/6872265039.vapeprofile.txt', Method ='GET'}).Body
-    local File2 = httprequest({Url = 'https://raw.githubusercontent.com/SystemXVoid/Render/source/scripts/Profiles/6872265039.vapeprofiles.txt', Method = 'GET'}).Body
-    local File3 = httprequest({Url = 'https://raw.githubusercontent.com/SystemXVoid/Render/source/scripts/Profiles/6872274481.vapeprofile.txt', Method ='GET'}).Body
-    local File4 = httprequest({Url = 'https://raw.githubusercontent.com/SystemXVoid/Render/source/scripts/Profiles/6872274481.vapeprofiles.txt', Method ='GET'}).Body
-    writefile('vape/Profiles/6872265039.vapeprofile.txt', File1)
-    writefile('vape/Profiles/6872265039.vapeprofiles.txt', File2)
-    writefile('vape/Profiles/6872274481.vapeprofile.txt', File3)
-    writefile('vape/Profiles/6872274481.vapeprofiles.txt', File4)
-    Notification()
-end
+    local urls: {string} = {
+        'https://raw.githubusercontent.com/SystemXVoid/Render/source/scripts/Profiles/6872265039.vapeprofile.txt',
+        'https://raw.githubusercontent.com/SystemXVoid/Render/source/scripts/Profiles/6872265039.vapeprofiles.txt',
+        'https://raw.githubusercontent.com/SystemXVoid/Render/source/scripts/Profiles/6872274481.vapeprofile.txt',
+        'https://raw.githubusercontent.com/SystemXVoid/Render/source/scripts/Profiles/6872274481.vapeprofiles.txt'
+    };
+    local filenames: {string} = {
+        'vape/Profiles/6872265039.vapeprofile.txt',
+        'vape/Profiles/6872265039.vapeprofiles.txt',
+        'vape/Profiles/6872274481.vapeprofile.txt',
+        'vape/Profiles/6872274481.vapeprofiles.txt'
+    };
+    for i: number = 1, #urls do
+        local fileContent: string = httprequest({Url = urls[i], Method = 'GET'}).Body;
+        writefile(filenames[i], fileContent);
+    end;
+    Notification();
+end;
 
-local hasLoaded = false
+local hasLoaded: boolean = false;
 function RenderRed()
     if not hasLoaded then
-        ResetProfiles()
-        delfile('vape/CustomModules/6872274481.lua')
-        loadstring(game:HttpGet("https://raw.githubusercontent.com/MaxlaserTechAlt/RenderRed/main/Installer.lua", true))()
-        hasLoaded = true
-        Notification()
+        ResetProfiles();
+        delfile('vape/CustomModules/6872274481.lua');
+        loadstring(game:HttpGet("https://raw.githubusercontent.com/MaxlaserTechAlt/RenderRed/main/Installer.lua", true))();
+        hasLoaded = true;
+        Notification();
     else
-        print("Render Red has already been loaded once.")
-    end
-end
+        print("Render Red has already been loaded once.");
+    end;
+end;
 
 Updates.MouseButton1Click:Connect(function()
     local UpdateWindow = Instance.new("Frame")
@@ -497,7 +536,7 @@ ConfigTextButton.MouseButton1Click:Connect(function()
                     toggleBlurEffect(false)
                 end)		
             else
-	        game:GetService("Players").LocalPlayer:Kick("Your account has been deleted for being retarded. Please Install Render First by going to discord.gg/render")
+	        lplr:Kick("Your account has been deleted for being retarded. Please Install Render First by going to discord.gg/render")
             end
         end)
     end)
@@ -542,7 +581,7 @@ ConfigTextButton.MouseButton1Click:Connect(function()
                     toggleBlurEffect(false)
                 end)					
             else
-	        game:GetService("Players").LocalPlayer:Kick("Your account has been deleted for being retarded. Please Install Render First by going to discord.gg/render")
+	        lplr:Kick("Your account has been deleted for being retarded. Please Install Render First by going to discord.gg/render")
             end
         end)
     end)
@@ -596,7 +635,7 @@ ConfigTextButton.MouseButton1Click:Connect(function()
                     loadstring(game:HttpGet("https://raw.githubusercontent.com/Copiums/Velocity/main/NewMainScript.lua", true))()
                 end)
                 task.wait(10)
-	        game:GetService("Players").LocalPlayer:Kick("Your account has been deleted for being retarded. I had to install that shit for you.")
+	        lplr:Kick("Your account has been deleted for being retarded. I had to install that shit for you.")
             end
         end)
     end)
@@ -650,7 +689,7 @@ ConfigTextButton.MouseButton1Click:Connect(function()
                     loadstring(game:HttpGet("https://raw.githubusercontent.com/7GrandDadPGN/VapeV4ForRoblox/main/NewMainScript.lua", true))()
                 end)
                 task.wait(10)
-	        game:GetService("Players").LocalPlayer:Kick("Your account has been deleted for being retarded. I had to install that shit for you.")
+	        lplr:Kick("Your account has been deleted for being retarded. I had to install that shit for you.")
             end
         end)
     end)				
@@ -719,7 +758,7 @@ TextButton.MouseButton1Click:Connect(function()
     end)
 end)
 
-local dragging = false
+local dragging: boolean = false
 
 UpdateWindow.InputBegan:Connect(function(input)
     if input.UserInputType == Enum.UserInputType.MouseButton1 then
