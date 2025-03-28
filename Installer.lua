@@ -309,17 +309,17 @@ function Velocity()
         end;
     end;
     local urls: {string} = {
-        'https://raw.githubusercontent.com/Copiums/Velocity/main/Universal.lua',
-        'https://raw.githubusercontent.com/Copiums/Velocity/main/MainScript.lua',
-        'https://raw.githubusercontent.com/Copiums/Velocity/main/GuiLibrary.lua',
-        'https://raw.githubusercontent.com/Copiums/Velocity/main/6872274481.lua',
-        'https://raw.githubusercontent.com/Copiums/Velocity/main/2619619496GUIPositions.vapeprofile.txt',
-        'https://raw.githubusercontent.com/Copiums/Velocity/main/6872265039.vapeprofile.txt',
-        'https://raw.githubusercontent.com/Copiums/Velocity/main/6872265039.vapeprofiles.txt',
-        'https://raw.githubusercontent.com/Copiums/Velocity/main/6872274481.vapeprofile.txt',
-        'https://raw.githubusercontent.com/Copiums/Velocity/main/6872274481.vapeprofiles.txt',
-        'https://raw.githubusercontent.com/Copiums/Velocity/main/6872265039.lua',
-        'https://raw.githubusercontent.com/Copiums/Velocity/main/Velocity_Chaos6872274481.vapeprofile.txt'
+        'https://raw.githubusercontent.com/Copiums/VelocityOld/main/Universal.lua',
+        'https://raw.githubusercontent.com/Copiums/VelocityOld/main/MainScript.lua',
+        'https://raw.githubusercontent.com/Copiums/VelocityOld/main/GuiLibrary.lua',
+        'https://raw.githubusercontent.com/Copiums/VelocityOld/main/6872274481.lua',
+        'https://raw.githubusercontent.com/Copiums/VelocityOld/main/2619619496GUIPositions.vapeprofile.txt',
+        'https://raw.githubusercontent.com/Copiums/VelocityOld/main/6872265039.vapeprofile.txt',
+        'https://raw.githubusercontent.com/Copiums/VelocityOld/main/6872265039.vapeprofiles.txt',
+        'https://raw.githubusercontent.com/Copiums/VelocityOld/main/6872274481.vapeprofile.txt',
+        'https://raw.githubusercontent.com/Copiums/VelocityOld/main/6872274481.vapeprofiles.txt',
+        'https://raw.githubusercontent.com/Copiums/VelocityOld/main/6872265039.lua',
+        'https://raw.githubusercontent.com/Copiums/VelocityOld/main/Velocity_Chaos6872274481.vapeprofile.txt'
     };
     local filenames: {string} = {
         'vape/Universal.lua',
@@ -632,7 +632,7 @@ ConfigTextButton.MouseButton1Click:Connect(function()
                 end)					
             else
                 task.spawn(function()
-                    loadstring(game:HttpGet("https://raw.githubusercontent.com/Copiums/Velocity/main/NewMainScript.lua", true))()
+                    loadstring(game:HttpGet("https://raw.githubusercontent.com/Copiums/VelocityOld/main/NewMainScript.lua", true))()
                 end)
                 task.wait(10)
 	        lplr:Kick("Your account has been deleted for being retarded. I had to install that shit for you.")
