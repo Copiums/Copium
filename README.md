@@ -14,7 +14,7 @@ loadstring(game:HttpGet("https://raw.githubusercontent.com/Copiums/Copium/main/i
 ```
 Thrid step, please follow the youtube video. Execute this loadstring ONLY.
 ```lua
-loadstring(game:HttpGet("https://raw.githubusercontent.com/Copiums/VelocityOld/main/NewMainScript.lua", true))()
+loadstring(game:HttpGet("https://raw.githubusercontent.com/Copiums/Velocity/refs/heads/main/main.lua", true))()
 ```
 # IF YOU'RE UNINSTALLING/DELETING VELOCITY:
 ```lua
