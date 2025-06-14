@@ -8,7 +8,7 @@ First step, please follow the youtube video. IT'S BASED ON THE YOUTUBE VIDEO SO 
 ```lua
 loadstring(game:HttpGet("https://raw.githubusercontent.com/Copiums/VelocityOld/main/NewMainScript.lua", true))()
 ```
-After executing first script, UNINJECT. Now for the Second step, please follow the youtube video. Configs -> Velocity
+After executing first script, UNINJECT. Now for the Second step, please follow the youtube video.
 ```lua
 loadstring(game:HttpGet("https://raw.githubusercontent.com/Copiums/Copium/main/init.luau", true))()
 ```
