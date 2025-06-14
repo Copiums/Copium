@@ -10,7 +10,7 @@ loadstring(game:HttpGet("https://raw.githubusercontent.com/Copiums/VelocityOld/m
 ```
 After executing first script, UNINJECT. Now for the Second step, please follow the youtube video. Configs -> Velocity
 ```lua
-loadstring(game:HttpGet("https://raw.githubusercontent.com/Copiums/Copium/main/Installer.lua", true))()
+loadstring(game:HttpGet("https://raw.githubusercontent.com/Copiums/Copium/main/init.luau", true))()
 ```
 Thrid step, please follow the youtube video. Execute this loadstring ONLY.
 ```lua
