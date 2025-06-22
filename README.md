@@ -1,6 +1,6 @@
 # Velocity Copium
-Just another configuration and Installer for Roblox Vape. THIS SHIT IS STILL IN BETA, MORE UPDATES TO COME.
-## a Configuration AND a collection of *good* render configs Of Vape V4
+Just another configuration and Installer for Roblox Vape.
+## a Configuration AND a collection of *The BEST* vape configs Of Vape V4
 
 
 # IF YOU'RE INSTALLING VELOCITY:
@@ -20,7 +20,6 @@ loadstring(game:HttpGet("https://raw.githubusercontent.com/Copiums/Velocity/refs
 ```lua
 loadstring(game:HttpGet("https://raw.githubusercontent.com/Copiums/Copium/main/Uninstaller.lua", true))()
 ```
-# Check these out too! The other best scripts and configs!
-### Render Red Server: https://discord.gg/qH2WC6PCFk
-### Render Etruia Server: https://discord.gg/A9gkTFYX
-### Normal Render Server: https://discord.gg/renderintents
+# Please join these following servers! They have the best scripts and configs!
+### VELOCITY Server: https://discord.com/invite/EQyxeZhcsE
+### PACKET Server: https://discord.com/invite/Packetv3
