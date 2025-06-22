@@ -18,7 +18,7 @@ loadstring(game:HttpGet("https://raw.githubusercontent.com/Copiums/Velocity/refs
 ```
 # IF YOU'RE UNINSTALLING/DELETING VELOCITY:
 ```lua
-loadstring(game:HttpGet("https://raw.githubusercontent.com/Copiums/Copium/main/Uninstaller.luau", true))()
+loadstring(game:HttpGet("https://raw.githubusercontent.com/Copiums/Copium/main/Uninstaller.lua", true))()
 ```
 # Check these out too! The other best scripts and configs!
 ### Render Red Server: https://discord.gg/qH2WC6PCFk
