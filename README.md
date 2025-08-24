@@ -3,11 +3,11 @@ Just another configuration and Installer for Roblox Vape.
 ## a Configuration AND a collection of *The BEST* vape configs Of Vape V4
 
 # IF YOU'RE INSTALLING VELOCITY:
-1. Please follow the youtube video. IT'S BASED ON THE YOUTUBE VIDEO SO GO WATCH IT BEFORE INSTALLING.
+1. Execute the installer and select any profile, whether it is Blatant, Closet, Performance, it doesn't matter.
 ```lua
 loadstring(game:HttpGet("https://raw.githubusercontent.com/Copiums/Copium/refs/heads/main/init.luau", true))()
 ```
-2. After you install Velocity, Please only execute this loadstring ONLY from now on.
+2. After you install Velocity, please only execute this loadstring ONLY from now on.
 ```lua
 loadstring(game:HttpGet("https://raw.githubusercontent.com/Copiums/Velocity/refs/heads/main/NewMainScript.lua", true))()
 ```
