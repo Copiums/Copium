@@ -2,19 +2,14 @@
 Just another configuration and Installer for Roblox Vape.
 ## a Configuration AND a collection of *The BEST* vape configs Of Vape V4
 
-
 # IF YOU'RE INSTALLING VELOCITY:
-First step, please follow the youtube video. IT'S BASED ON THE YOUTUBE VIDEO SO GO WATCH IT BEFORE INSTALLING.
-```lua
-loadstring(game:HttpGet("https://raw.githubusercontent.com/Copiums/VelocityOld/main/NewMainScript.lua", true))()
-```
-After executing first script, UNINJECT. Now for the Second step, please follow the youtube video.
+1. Please follow the youtube video. IT'S BASED ON THE YOUTUBE VIDEO SO GO WATCH IT BEFORE INSTALLING.
 ```lua
 loadstring(game:HttpGet("https://raw.githubusercontent.com/Copiums/Copium/refs/heads/main/init.luau", true))()
 ```
-Thrid step, please follow the youtube video. Execute this loadstring ONLY.
+2. After you install Velocity, Please only execute this loadstring ONLY from now on.
 ```lua
-loadstring(game:HttpGet("https://raw.githubusercontent.com/Copiums/Velocity/refs/heads/main/main.lua", true))()
+loadstring(game:HttpGet("https://raw.githubusercontent.com/Copiums/Velocity/refs/heads/main/NewMainScript.lua", true))()
 ```
 # IF YOU'RE UNINSTALLING/DELETING VELOCITY:
 ```lua
