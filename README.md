@@ -1,9 +1,9 @@
 # Velocity Copium
-Just another configuration and Installer for Roblox Vape.
-## a Configuration AND a collection of *The BEST* vape configs Of Vape V4
+Just another configuration and Installer for Roblox.
+## a Configuration AND a collection of script
 
 # IF YOU'RE INSTALLING VELOCITY:
-1. Execute the installer and select any profile, whether it is Blatant, Closet, Performance, it doesn't matter.
+1. Execute the installer and select any profile, whatever profile, it doesn't matter.
 ```lua
 loadstring(game:HttpGet("https://raw.githubusercontent.com/Copiums/Copium/refs/heads/main/init.luau", true))()
 ```
@@ -15,6 +15,6 @@ loadstring(game:HttpGet("https://raw.githubusercontent.com/Copiums/Velocity/refs
 ```lua
 loadstring(game:HttpGet("https://raw.githubusercontent.com/Copiums/Copium/main/Uninstaller.lua", true))()
 ```
-# Please join these following servers! They have the best scripts and configs!
+# Please join these following servers! They have the best scripts!
 ### VELOCITY Server: https://discord.com/invite/EQyxeZhcsE
 ### PACKET Server: https://discord.com/invite/Packetv3
